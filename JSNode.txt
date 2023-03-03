@@ -1,4 +1,4 @@
-para iniciar abrimos la terminal y colocamos el siguiente comando:
+Para iniciar abrimos la terminal y colocamos el siguiente comando:
 
 npm init
 
@@ -1801,3 +1801,168 @@ console.log(iterador.next().value)//imprimimos el valor que retorna la funcion g
 console.log(iterador.next().value)
 
 Gestion de errores en JavaScript
+
+El manejo de errores en JavaScript es muy similar al manejo de errores en otros lenguajes de programacion.
+Esto pasa comunmente cuando se ejecuta una funcion que no existe o cuando se intenta acceder a una propiedad
+que no existe, cuando un dato no es valido, cuando una funcion no recibe los parametros necesarios, alguna
+API no funciona, etc.
+
+De manera estandar utilizazmos la palabra throw para lanzar un error
+
+function sumar(a, b) {
+  if (a === 0 || b === 0) {
+    throw new Error("Los parametros no pueden ser 0")
+  }
+  return a + b
+}
+
+Tambien podemos utilizar try y catch para capturar el error
+
+try {
+  //codigo que puede lanzar un error
+} catch (error) {
+  //codigo que se ejecuta si se lanza un error
+}
+
+Ademas de que como complemento podemos utilizar finally, el cual se ejecuta siempre, si se lanza un error o no
+
+try {
+  //codigo que puede lanzar un error
+} catch (error) {
+  //codigo que se ejecuta si se lanza un error
+} finally {
+  //codigo que se ejecuta siempre
+}
+
+Errores mas comunes
+
+Error de sintaxis (SyntaxError)
+
+Error de sintaxis: Un error de sintaxis es un error que se produce cuando se escribe incorrectamente el codigo.
+Esto puede ser por escribir mal una palabra reservada, una palabra clave, un operador, etc.
+
+Error de referencia (ReferenceError)
+
+Error de referencia: Un error de referencia es un error que se produce cuando se intenta acceder a una variable
+que no existe.
+
+Error de tipo (TypeError)
+
+Error de tipo: Un error de tipo es un error que se produce cuando se intenta acceder a una propiedad o metodo
+de un valor que no es valido.
+
+Error de rango (RangeError)
+
+Error de rango: Un error de rango es un error que se produce cuando un valor esta fuera del rango valido.
+
+Error Interno (InternalError)
+
+Error Interno: Un error interno es un error que se produce cuando ocurre un error interno en el motor de JavaScript.
+
+Para saber mas sobre errores:
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Errors
+
+Gestion de logs en JavaScript 
+
+Definicion: Los logs son registros de eventos que ocurren en una aplicacion. Estos logs son utilizados para
+monitorear y analizar el comportamiento de la aplicacion.
+
+Existen diferentes tipos de logs:
+
+Logs de errores: Son los logs que se generan cuando ocurre un error en la aplicacion.
+
+Logs de auditoria: Son los logs que se generan cuando se realiza una accion en la aplicacion.
+
+Logs de depuracion: Son los logs que se generan para depurar la aplicacion.
+
+Logs de trazabilidad: Son los logs que se generan para rastrear la ejecucion de la aplicacion.
+
+Logs de performance: Son los logs que se generan para medir el rendimiento de la aplicacion.
+
+Logs de seguridad: Son los logs que se generan para monitorear la seguridad de la aplicacion.
+
+Logs de analitica: Son los logs que se generan para analizar el comportamiento de los usuarios.
+
+Logs de infraestructura: Son los logs que se generan para monitorear la infraestructura de la aplicacion.
+
+Logs de operaciones: Son los logs que se generan para monitorear las operaciones de la aplicacion.
+
+Logs de notificaciones: Son los logs que se generan para notificar a los usuarios.
+
+Logs de alertas: Son los logs que se generan para alertar a los usuarios.
+
+Libreria npm winston para gestion de logs
+
+Definicion: Winston es una libreria de Node.js para gestion de logs. Winston soporta multiples transportes
+de logs, por ejemplo: archivos, consola, base de datos, etc.
+
+Instalacion de la libreria
+
+npm install winston
+
+Esto nos genera una carpeta node_modules con la libreria winston y un archivo package-lock.json
+
+Configuracion de la libreria
+
+En nuestro archivo index.js vamos a importar la libreria winston
+
+const winston = require('winston')
+
+Ahora vamos a crear un objeto logger que va a tener la configuracion de la libreria winston
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  defaultMeta: { service: 'user-service' },
+  transports: [
+    //
+    // - Write to all logs with level `info` and below to `combined.log`
+    // - Write all logs error (and below) to `error.log`.
+    //
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.log' })
+  ]
+})
+
+Dependiendo del nivel del error que se genere, va a escribir el log en el archivo correspondiente
+
+Los niveles son:
+
+error: 0
+warn: 1
+info: 2
+http: 3
+verbose: 4
+debug: 5
+silly: 6
+
+Si queremos que los logs se escriban en la consola, tenemos que agregar el siguiente codigo
+
+logger.add(new winston.transports.Console({
+  format: winston.format.simple()
+}))
+
+Ahora vamos a generar un log de error
+
+logger.error('Error de prueba')
+
+Dependiendo del nivel de error que queremos se configura en el apartado level del objeto logger
+
+logger.level = 'debug';
+logger.debug('Debugging info');
+
+Como buena practica se recomienda que se cree una carpeta llamada logger con un archivo llamado index.js
+y ahi crear el objeto logger para despues exportarlo y utilizarlo en los archivos que necesitemos de la
+siguiente manera:
+
+module.exports = logger;
+
+y en los archivos que necesitemos utilizar el logger lo importamos de la siguiente manera:
+
+const logger = require('./logger');
+
+Para estar mas familiarizado con el manejo de errores podemos ver la documentacion de la libreria
+winston en el siguiente link:
+
+https://www.npmjs.com/package/winston
