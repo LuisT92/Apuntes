@@ -1,0 +1,750 @@
+Para asociar el archivo CSS con el documento HTML, 
+Se debe incluir la siguiente línea de código en la sección de encabezado del documento HTML:
+<link rel="stylesheet" href="archivo.css" />
+
+Para colocar comentarios en CSS se coloca:
+/* comentario */
+
+Al ser HTML un lenguaje de etiquetas en CSS debemos colocvar la etiqueta que queremos modificar y 
+dentro de las llaves colocar el estilo que queremos aplicar, por ejemplo para modificar el color de 
+una etiqueta <p> se debe colocar lo siguiente:
+p {
+    color: red;
+    }
+Para modificar el tamaño de la fuente se debe colocar lo siguiente:
+p {
+    font-size: "numero de pixeles"px;
+    }
+
+
+Selectores
+
+Existen 2 tipos de selectores en CSS:
+Selectores de etiqueta: Se utiliza para seleccionar todas las etiquetas de un tipo específico.
+Selectores de clase: Se utiliza para seleccionar todas las etiquetas que tienen un atributo 
+class con un valor específico.
+
+Selectores de etiqueta
+
+Se utiliza id="nombre" para identificar un elemento en CSS, por ejemplo:
+<p id="parrafo">Este es un párrafo</p>
+Y en CSS se coloca:
+#parrafo {
+    color: red;
+    }
+
+Selectores de clase
+
+Se utiliza class="nombre" para identificar un elemento en CSS, por ejemplo:
+<p class="parrafo">Este es un párrafo</p>
+Y en CSS se coloca:
+.parrafo {
+    color: red;
+    }
+
+se usa tambien un selector universal que es el asterisco (*) y se utiliza para seleccionar 
+todos los elementos de la página, por ejemplo:
+* {
+    color: red;
+    }
+
+Para afectar a diferentes selectores se pueden separar por comas, por ejemplo:
+p, h1, h2, .parrafo, #parrafo {
+    color: red;
+    }
+
+Para afectar a todos los elementos que estén dentro de un elemento se utiliza el espacio, por ejemplo:
+div p {
+    color: red;
+    }
+podemos obtener ayuda parea diseño css en purecss.io y para los colores en coolors.co
+
+Un atajo para colocar etiquetas con una clase en html es:
+p,parrafo
+Y esto nos va a generar en automatico:
+<p class="parrafo">Este es un párrafo</p>
+
+Podemos insertar de 3 formas diferentes los estilos css en html:
+1. En la sección de encabezado del documento HTML directamente:
+<head>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</head>
+2. En la sección de encabezado del documento HTML como link:
+<head>
+    <link rel="stylesheet" href="archivo.css" />
+</head>
+3. En el documento HTML como atributo de la etiqueta:
+<p style="color: red;">Este es un párrafo</p>
+
+Colores
+
+Los colores en CSS se pueden colocar de 3 formas diferentes:
+1. Por nombre: red, blue, green, etc. por ejemplo:
+p {
+    color: red;
+    }
+2. Por código hexadecimal: #000000, #ffffff, #ff0000, etc., por ejemplo:
+p {
+    color: #ff0000;
+    }
+3. Por código RGB: rgb(0, 0, 0), rgb(255, 255, 255), rgb(255, 0, 0), etc. por ejemplo:
+p {
+    color: rgb(255, 0, 0);
+    }
+
+Aunque tambien existe de colocar colores por codigo RGBA que es el mismo que el RGB pero con un campo
+etra que es el alpha que es la transparencia, por ejemplo:
+rgba(0, 0, 0, 0.5)
+
+Fondo
+
+Para colocar un fondo a un elemento se utiliza la propiedad background, por ejemplo:
+p {
+    background: red;
+    }
+Para colocar un fondo a un elemento con una imagen se utiliza la propiedad background-image, por ejemplo:
+p {
+    background-image: url("imagen.jpg");
+    }
+
+Padding y margin
+
+El padding es el espacio que hay entre el borde del elemento y el contenido del elemento, por ejemplo:
+p {
+    padding: 10px;
+    }
+
+El margin es el espacio que hay entre el borde del elemento y el borde del elemento adyacente, por ejemplo:
+p {
+    margin: 10px;
+    }
+
+Para colocar un padding o un margin a un elemento en específico se utiliza la propiedad padding-top,
+padding-right, padding-bottom, padding-left, margin-top, margin-right, margin-bottom, margin-left, por ejemplo:
+p {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    }
+
+Border
+
+Para colocar un borde a un elemento se utiliza la propiedad border, por ejemplo:
+p {
+    border: 1px solid red;
+    }
+
+Fuentes de CSS
+
+Para colocar una fuente a un elemento se utiliza la propiedad font-family, por ejemplo:
+p {
+    font-family: Arial;
+    }
+
+Para colocar el tamaño de una fuente a un elemento se utiliza la propiedad font-size, por ejemplo:
+p {
+    font-size: 12px;
+    }
+
+Para colocar el estilo de una fuente a un elemento se utiliza la propiedad font-style, por ejemplo:
+p {
+    font-style: italic;
+    }
+
+Para colocar el peso de una fuente a un elemento se utiliza la propiedad font-weight, por ejemplo:
+p {
+    font-weight: bold;
+    }
+
+podemos importar fuentes de google fonts de esta manera:
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+Esta manera debe de colocarse en el head del documento html y se debe de colocar en el 
+font-family en CSS de la siguiente manera:
+font-family: 'Roboto', sans-serif;
+otra forma de importar es con link desde nuestro archivo HTML de esta manera:
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+Y se debe de colocar en el font-family en CSS de la siguiente manera:
+font-family: 'Roboto', sans-serif;
+
+Disposiciones y alineaciones en CSS
+
+Para colocar una disposición en CSS se utiliza la propiedad display, por ejemplo:
+p {
+    display: inline;
+    }
+
+Para colocar una alineación en CSS se utiliza la propiedad text-align, por ejemplo:
+p {
+    text-align: center;
+    }
+
+Float
+
+Para colocar un float en CSS se utiliza la propiedad float, por ejemplo:
+p {
+    float: left;
+    }
+Esto nos sirve para colocar elementos uno al lado del otro.
+
+Posicionamiento
+
+Para colocar un posicionamiento en CSS se utiliza la propiedad position, por ejemplo:
+p {
+    position: absolute;
+    }
+
+Posicionamiento relativo
+
+Para colocar un posicionamiento relativo en CSS se utiliza la propiedad position, por ejemplo:
+p {
+    position: relative;
+    }
+
+Posicionamiento fixed
+
+Para colocar un posicionamiento fixed en CSS se utiliza la propiedad position, por ejemplo:
+p {
+    position: fixed;
+    }
+
+sirve para colocar un elemento en una posicion fija en la pantalla.
+El pocisionamiento fixed se utiliza para colocar un menu de navegación en la parte superior 
+de la pantalla.
+
+Posicionamiento stiky
+
+Sirve para colocar un elemento en una posicion fija en la pantalla.
+Comunmente se usa un z-index para que el elemento se mantenga en la parte superior de la pantalla ya que
+si no se coloca un z-index el elemento se va a colocar debajo de los elementos que se 
+encuentran en la parte superior de la pantalla. Este posicionamiento se utiliza para colocar un menu 
+de navegación en la parte superior de la pantalla.
+
+Al final el posicionamiento siempre es con respcto al elemento padre que lo contiene.
+
+FlexBox
+
+Comunmente se utiliza para el diseño responsive de una pagina web ya que se adapta a cualquier tamaño 
+de pantalla.
+
+Para colocar un flexbox en CSS se utiliza la propiedad display, por ejemplo:
+p {
+    display: flex;
+    }
+
+Esto nos ayuda a que todo el contenido dentro del elemento que sera flex se posicionara por defecto en 
+una fila y se alineara al inicio.
+
+Se usa tambien dentro de este flxbox la etiqueta justify-content para alinear los elementos dentro del
+flexbox en el centro, por ejemplo:
+p {
+    display: flex;
+    justify-content: center;
+    }
+
+Otro elemento que puede usarse con flexbox es el flex-wrap para que los elementos se posicionen en 
+depenidiendo de la distribucion de la pantalla, ejemplo:
+p {
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+Si no se coloca height a los elementos dentro del flexbox estos se van a adaptar al tamaño del 
+contenido con la etiqueta align-items en el fexbox, por ejemplo:
+p {
+    display: flex;
+    align-items: center; o strecth; o flex-start; o flex-end;
+    }
+
+El orden de los elementos dentro del flexbox se puede cambiar con la propiedad felx-direction, 
+por ejemplo:
+p {
+    display: flex;
+    flex-direction: row-reverse; o column; o column-reverse;
+    }
+
+Para colocar un orden a los elementos dentro del flexbox se utiliza la propiedad order, por ejemplo:
+p {
+    order: 1; o 2; o 3; o 4; o 5; o 6; o 7; o 8; o 9; o 10;
+    }
+
+Para ver mas sobre flexbox se puede ver en la siguiente pagina:
+http://codepen.io/enxaneta/full/adLPwv/
+Como buena practica es mejor no usar demasiado flexbox ya que puede afectar el rendimiento de la pagina.
+
+Overflow
+Esta propiedad de CSS se utiliza para colocar un scroll en un elemento, por ejemplo:
+p {
+    overflow: scroll;
+    }
+Nos sirve para colocar un scroll en un elemento.
+
+Si colocamos overflow: hidden; el contenido que se encuentre fuera del elemento se va a ocultar.
+Si colocamos overflow: auto; el contenido que se encuentre fuera del elemento se va a ocultar y 
+se va a colocar un scroll.
+Entonces entendemos que nos ayuda a adaptar el contenido de un elemento al tamaño del mismo, por ejemplo:
+a un div.
+
+Opacidad
+
+Para colocar una opacidad en CSS se utiliza la propiedad opacity, por ejemplo:
+p {
+    opacity: 0.5; se mide entre 0 y 1
+    }
+
+
+Galeria de imagenes
+
+Para eleminar el padding y el margin que hace que la imagen se cargue y ocupe mas espacio que el de la 
+pantalla eliminamos estos dos de esta manera:
+
+* {
+    padding: 0;
+    margin: 0;
+    }
+
+Para hacer una galeria de imagenes podemos usar flexbox de esta manera, en html colocamos las imagenes
+dentro de un div con la clase gallery y en css colocamos la clase gallery con display: flex; de esta manera:
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+        }
+A cada imagen le colocamos solo en width:
+img {
+    width: 100%;
+    }
+
+Para colocar un efecto de zoom a las imagenes podemos usar la propiedad transition de css, por ejemplo:
+img {
+    width: 100%;
+    transition: all 0.5s;
+    }
+Y para que la imagen se agrande cuando el mouse este encima de la imagen usamos la propiedad transform
+de css, por ejemplo:
+img:hover {
+    transform: scale(1.1);
+    }
+
+Podemos usar objet-fit para que la imagen se adapte al tamaño del div, por ejemplo:
+img {
+    width: 100%;
+    transition: all 0.5s;
+    object-fit: cover;
+    }
+Con gap podemos colocar un espacio entre las imagenes, por ejemplo:
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+        }
+Esto nos funciona tanto para columnas como para filas.
+si queremos colocar los elementos de un div en columnas podemos usar flex-direction: column; 
+y si queremos que los elementos se adapten al tamaño del div podemos usar align-items: stretch;
+Recordemos que por defecto los elementos se alinean al inicio en fila.
+
+Anidacion de selectores
+
+Se refiere a que podemos colocar un selector dentro de otro selector, por ejemplo:
+En HTML tenemos un div con la clase container y dentro de este div tenemos un div con la clase item
+y dentro parrafos sin id ni clase por lo que para seleccionarlos podemos usar el selector de clase,
+primero para seleccionar el div principal se colocaria:
+.container {
+    "estilos"
+    }
+Y para seleccionar el div que esta dentro del div principal se colocaria:
+.container .item {
+    "estilos"
+    }
+para llegar a afectar solo a los parrafos dentro del div item y no los que esten fuera de este sera de
+esta manera:
+.container .item p {
+    color: red;
+    }
+Asi podemos ahorrar codigo y no repetir estilos.
+
+Pseudo clases
+
+Son clases que se agregan a un selector para darle un estilo especial, por ejemplo:
+a:hover {
+    color: red;
+    }
+Esto nos sirve para darle un estilo especial a un elemento cuando el mouse este encima de este.
+otro ejemplo podria se:
+a:active {
+    color: red;
+    }
+Esto nos sirve para darle un estilo especial a un elemento cuando este este activo.
+Las pseudoclases las podemos identificar por el : que se coloca antes de la pseudoclase en 
+el menu de estilos de css.
+para saber mas de pseudoclase podemos visitar la siguiente pagina:
+https://www.w3schools.com/css/css_pseudo_classes.asp
+
+Pseudo elementos
+
+Son elementos que se agregan a un selector para darle un estilo especial como befre o after, por ejemplo:
+
+p::before {
+    content: "Hola";
+    }
+Esto nos sirve para colocar un texto antes del elemento seleccionado.
+para saber mas de pseudoclase podemos visitar la siguiente pagina:
+https://www.w3schools.com/css/css_pseudo_elements.asp
+
+Especifisidad
+
+Es la importancia que tiene un selector para que se aplique a un elemento, por ejemplo:
+- Si tenemos un selector de clase y un selector de id y ambos tienen el mismo estilo, el selector de id
+tiene mas importancia que el de clase y por lo tanto se va a aplicar el estilo del selector de id.
+- Si tenemos un selector de clase y un selector de elemento y ambos tienen el mismo estilo, el selector de
+clase tiene mas importancia que el de elemento y por lo tanto se va a aplicar el estilo del selector de clase.
+- Si tenemos un selector de id y un selector de elemento y ambos tienen el mismo estilo, el selector de id
+tiene mas importancia que el de elemento y por lo tanto se va a aplicar el estilo del selector de id.
+- Si tenemos un selector de id y un selector de clase y ambos tienen el mismo estilo, el selector de id
+tiene mas importancia que el de clase y por lo tanto se va a aplicar el estilo del selector de id.
+Para especificar quue queremos que un selector tenga mas importancia que otro podemos usar
+!important, por ejemplo:
+p {
+    color: red !important;
+    }
+Esto nos sirve para que el selector de elemento tenga mas importancia que el de clase.
+
+Selectores por tipo
+
+Son selectores que se usan para seleccionar elementos por su tipo, por ejemplo:
+.input[type="text"] {
+    color: red;
+    }
+Esto nos sirve para seleccionar un elemento por su tipo y por su atributo, en este caso seleccionamos
+un input de tipo text y le cambiamos el color a rojo.
+Tambien podemos seleccionar un elemento por su atributo como password, por ejemplo:
+.input[type="password"] {
+    color: red;
+    }
+Esto nos sirve para seleccionar un elemento por su tipo y por su atributo, en este caso seleccionamos
+un input de tipo password y le cambiamos el color a rojo.
+
+Bootsrap
+
+Es un framework de css que nos ayuda a darle estilo a nuestras paginas web, se importa en el head de
+nuestra pagina web, por ejemplo:
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+Para saber mas de bootstrap podemos visitar la siguiente pagina:
+https://getbootstrap.com/
+
+Siempre hay que importar tanto el css de boostrap como el js de boostrap, por ejemplo:
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+El script va al final del body de la pagina web.
+
+Animaciones y transiciones
+
+Las animaciones y transiciones nos sirven para darle movimiento a nuestros elementos, por ejemplo:
+- Animaciones:
+.padre:hover .hijo {
+    transition: all 1500ms;
+    }
+
+Si colocamos 2 valores en la propiedad transition, el primero es la propiedad que queremos animar y el segundo
+es el tiempo que queremos que dure la animacion, por ejemplo:
+- Animaciones:
+.padre:hover .hijo {
+    transition: transform 1500ms 1s;
+    }
+
+- Transiciones:
+.padre:hover .hijo {
+    transform: rotate(360deg);
+    }
+
+Palabra clave @keyframes
+
+Es una palabra clave que nos sirve para crear una animacion, por ejemplo:
+.padre:hover .hijo {
+    animation: animacion;
+    }
+
+Y colopcamos @keyframes y le damos un nombre a la animacion, por ejemplo:
+
+@keyframes animacion {
+    0% {
+        transform: rotate(0deg);
+        }
+    100% {
+        transform: rotate(360deg);
+        }
+    }
+Las palabras is-in o is-out nos sirven para que la animacion se ejecute cuando el elemento entra o sale de la pagina web, por ejemplo:
+- Animaciones:
+.padre:hover .hijo {
+    animation: animacion is-in;
+    }
+Las palabras transition, transform y translate:
+
+- Transition: es una propiedad que nos sirve para darle una transicion a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transition: all 1500ms;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una transicion de 1500 milisegundos.
+
+- Transform: es una propiedad que nos sirve para darle una transformacion a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transform: rotate(360deg);
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una rotacion de 360 grados.
+
+- Translate: es una propiedad que nos sirve para darle una traslacion a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transform: translate(100px);
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una traslacion de 100px.
+
+Las palabras rotate, scale y skew:
+
+- Rotate: es una propiedad que nos sirve para darle una rotacion a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transform: rotate(360deg);
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una rotacion de 360 grados.
+
+- Scale: es una propiedad que nos sirve para darle una escala a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transform: scale(2);
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una escala de 2.
+
+- Skew: es una propiedad que nos sirve para darle una inclinacion a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transform: skew(45deg);
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una inclinacion de 45 grados.
+
+Las palabras ease, ease-in, ease-out y ease-in-out:
+
+- Ease: es una propiedad que nos sirve para darle una animacion suave a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transition: all 1500ms ease;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion suave de 1500 milisegundos.
+
+- Ease-in: es una propiedad que nos sirve para darle una animacion suave al principio y rapida al final a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transition: all 1500ms ease-in;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion suave al principio y rapida al final de 1500 milisegundos.
+
+- Ease-out: es una propiedad que nos sirve para darle una animacion rapida al principio y suave al final a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transition: all 1500ms ease-out;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion rapida al principio y suave al final de 1500 milisegundos.
+
+- Ease-in-out: es una propiedad que nos sirve para darle una animacion suave al principio y al final a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transition: all 1500ms ease-in-out;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion suave al principio y al final de 1500 milisegundos.
+
+Las palabras linear, cubic-bezier y steps:
+
+- Linear: es una propiedad que nos sirve para darle una animacion lineal a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transition: all 1500ms linear;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion lineal de 1500 milisegundos.
+
+- Cubic-bezier: es una propiedad que nos sirve para darle una animacion personalizada a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transition: all 1500ms cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion personalizada de 1500 milisegundos.
+
+- Steps: es una propiedad que nos sirve para darle una animacion en pasos a un elemento, por ejemplo:
+.padre:hover .hijo {
+    transition: all 1500ms steps(10);
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion en pasos de 1500 milisegundos.
+
+Las palabras infinite y alternate:
+
+- Infinite: es una propiedad que nos sirve para darle una animacion infinita a un elemento, por ejemplo:
+.padre:hover .hijo {
+    animation: animacion is-in infinite;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion infinita.
+
+- Alternate: es una propiedad que nos sirve para darle una animacion alternada a un elemento, por ejemplo:
+.padre:hover .hijo {
+    animation: animacion is-in alternate;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion alternada.
+
+Las palabras forwards y backwards:
+
+- Forwards: es una propiedad que nos sirve para darle una animacion que se detiene en el ultimo frame a un elemento, por ejemplo:
+.padre:hover .hijo {
+    animation: animacion is-in forwards;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion que se detiene en el ultimo frame.
+
+- Backwards: es una propiedad que nos sirve para darle una animacion que se detiene en el primer frame a un elemento, por ejemplo:
+.padre:hover .hijo {
+    animation: animacion is-in backwards;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion que se detiene en el primer frame.
+
+Las palabras both, running y paused:
+
+- Both: es una propiedad que nos sirve para darle una animacion que se detiene en el ultimo frame a un elemento, por ejemplo:
+.padre:hover .hijo {
+    animation: animacion is-in both;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion que se detiene en el ultimo frame.
+
+- Running: es una propiedad que nos sirve para darle una animacion que se detiene en el primer frame a un elemento, por ejemplo:
+.padre:hover .hijo {
+    animation: animacion is-in running;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion que se detiene en el primer frame.
+
+- Paused: es una propiedad que nos sirve para darle una animacion que se detiene en el primer frame a un elemento, por ejemplo:
+.padre:hover .hijo {
+    animation: animacion is-in paused;
+    }
+Con esto le estamos diciendo que el elemento hijo va a tener una animacion que se detiene en el primer frame.
+
+Tooltips
+
+Los tooltips son pequeñas ventanas que aparecen cuando el usuario pasa el cursor sobre un elemento. 
+Estas ventanas son muy útiles para mostrar información adicional sobre un elemento, como por ejemplo,
+una descripción de una imagen o un enlace.
+
+Para crear un tooltip, debemos crear un elemento span que contenga el texto que queremos mostrar en el
+tooltip.
+
+El elemento span debe tener la clase tooltip, y el elemento que queremos que muestre el tooltip debe 
+tener la clase tooltip-trigger.
+
+Para que el tooltip aparezca cuando el usuario pasa el cursor sobre el elemento, debemos añadir la 
+clase tooltip-active al elemento span.
+
+Para que el tooltip aparezca en la posición que queramos, debemos añadir la clase tooltip-top,
+tooltip-right, tooltip-bottom o tooltip-left al elemento span.
+
+Por ejemplo:
+
+<div class="tooltip-trigger">Texto</div>
+<span class="tooltip tooltip-top tooltip-active">Texto del tooltip</span>
+
+Y en el CSS:
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    z-index: 100;
+}
+
+.tooltip-active {
+    display: block;
+}
+
+.tooltip-top {
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip-right {
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%);
+}
+
+.tooltip-bottom {
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip-left {
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%);
+}
+
+.tooltip-trigger {
+    position: relative;
+}
+
+.tooltip-trigger:hover .tooltip {
+    display: block;
+}
+
+Figura(triangulo)
+
+Crea un div con la clase triangulo y dentro de el un div con la clase triangulo-izq y otro con la 
+clase triangulo-der.
+
+Para que el triangulo aparezca en la posición que queramos, debemos añadir la clase triangulo-top,
+triangulo-right, triangulo-bottom o triangulo-left al div con la clase triangulo.
+
+Por ejemplo:
+
+<div class="triangulo triangulo-top">
+    <div class="triangulo-izq"></div>
+    <div class="triangulo-der"></div>
+</div>
+
+Y en el CSS:
+
+.triangulo {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.triangulo-izq {
+    border-top: 10px solid transparent;
+    border-right: 10px solid #000;
+    border-bottom: 10px solid transparent;
+}
+
+.triangulo-der {
+    border-top: 10px solid transparent;
+    border-left: 10px solid #000;
+    border-bottom: 10px solid transparent;
+}
+
+.triangulo-top {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.triangulo-right {
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+}
+
+.triangulo-bottom {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.triangulo-left {
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+}

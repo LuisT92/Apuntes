@@ -1,0 +1,160 @@
+Cuestiones basicas
+
+Git es un sistema de control de versiones, que nos permite guardar el historial de los cambios que
+se han realizado en un proyecto, y poder volver a versiones anteriores si es necesario.
+
+Git es un sistema distribuido, lo que significa que cada desarrollador tiene una copia completa
+del repositorio, y puede trabajar sin conexión a internet.
+
+Comandos basicos:
+
+git init : Inicializa un repositorio en el directorio actual.
+git add : Agrega archivos al repositorio.
+git commit : Guarda los cambios en el repositorio.
+git status : Muestra el estado actual del repositorio.
+git log : Muestra el historial de commits.
+git diff : Muestra las diferencias entre commits, ramas, etc.
+git checkout : Cambia de rama o restaura archivos.
+git branch : Lista, crea o elimina ramas.
+git merge : Combina ramas.
+git remote : Agrega o elimina repositorios remotos.
+git push : Envia cambios a un repositorio remoto.
+git pull : Trae cambios desde un repositorio remoto.
+
+Commit
+
+Un commit es un punto en el tiempo en el que se guarda el estado de los archivos en el repositorio. 
+Cada commit tiene un identificador único, y se puede referenciar a él para ver el estado de los 
+archivos en ese momento.
+
+git commit -m "Mensaje del commit"
+
+
+Diferentes opciones de commit
+
+git commit -a : Agrega todos los archivos modificados al commit.
+git commit -am "Mensaje del commit" : Agrega todos los archivos modificados y crea el commit.
+git commit --amend : Modifica el último commit.
+git commit -m "Mensajedel commit": Crea un commit con el mensaje especificado.
+git commit -m "Mensaje del commit" --author "Nombre <email>" : Crea un commit con el autor 
+                                                                especificado.
+
+Log
+
+El log muestra el historial de commits. Por defecto muestra los últimos 10 commits.
+
+git log : Muestra los últimos 10 commits.
+git log -n : Muestra los últimos n commits.
+git log --oneline : Muestra los últimos 10 commits en una sola línea.
+git log --oneline -n : Muestra los últimos n commits en una sola línea.
+git log --oneline --graph : Muestra los últimos 10 commits en una sola línea con un gráfico.
+
+Cuando usamos este cmando nos devuelve la informacion de los commits donde se muestra el identificador
+del commit, el autor, la fecha y el mensaje del commit.
+
+Por ejemplo:
+
+commit 1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t
+
+Para ver el estado de los archivos en ese momento.
+
+git show 1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t
+
+Ramas
+
+Una rama es una línea de desarrollo independiente a otra. Sirve para probar nuevas funcionalidades
+sin afectar el código principal.
+
+git branch : Lista las ramas existentes.
+git branch nombre_rama : Crea una nueva rama.
+git checkout nombre_rama : Cambia a la rama especificada.
+git checkout -b nombre_rama : Crea una nueva rama y se cambia a ella.
+git branch -d nombre_rama : Elimina la rama especificada.
+
+Para crear una rama a partir de un commit especifico.
+
+git branch "nombre_rama" "id_commit"
+
+Crear rama  a partir de otra rama
+
+git checkout -b "nombre_rama" "nombre_rama" 
+
+Merge
+
+El merge es la operación que permite combinar ramas. Para hacer un merge se debe estar en la rama
+a la que se le van a incorporar los cambios.
+
+git merge nombre_rama : Incorpora los cambios de la rama especificada a la rama actual.
+
+Existen 2 tipos de merge:
+
+Fast-forward: Se realiza cuando la rama que se va a incorporar no tiene commits nuevos. Se mueve
+              el puntero de la rama actual al último commit de la rama que se va a incorporar.
+
+3-way: Se realiza cuando la rama que se va a incorporar tiene commits nuevos. Se crea un nuevo
+       commit con los cambios de ambas ramas.
+
+Fork
+
+Un fork es una copia de un repositorio de otro usuario. Sirve para poder trabajar en un proyecto
+sin tener permisos de escritura.
+
+git clone url : Clona un repositorio en el directorio actual.
+git remote add upstream url : Agrega un repositorio remoto.
+git fetch upstream : Trae los cambios del repositorio remoto.
+git merge upstream/master : Incorpora los cambios del repositorio remoto.
+
+Tags
+
+Los tags son etiquetas que se le pueden asignar a commits para identificar versiones del proyecto.
+
+git tag : Lista los tags existentes.
+git tag -a v1.0 -m "Mensaje del tag" : Crea un tag anotado.
+git tag -a v1.0 -m "Mensaje del tag" id_commit : Crea un tag anotado en el commit especificado.
+git tag -d v1.0 : Elimina el tag especificado.
+git push origin v1.0 : Envia el tag especificado al repositorio remoto.
+git push origin --tags : Envia todos los tags al repositorio remoto.
+
+Revert
+
+El revert es la operación que permite deshacer un commit. Para hacer un revert se debe estar en la
+rama donde se quiere deshacer el commit.
+
+git revert id_commit : Deshace el commit especificado.
+
+Rebase
+
+El rebase es la operación que permite combinar ramas. Para hacer un rebase se debe estar en la rama
+a la que se le van a incorporar los cambios.
+
+git rebase nombre_rama : Incorpora los cambios de la rama especificada a la rama actual.
+
+Eliminar fichero de un repositorio
+
+git rm --cached nombre_fichero : Elimina el fichero del repositorio.
+
+Reset
+
+El reset es la operación que permite deshacer commits locales. Para hacer un reset se debe estar en
+la rama donde se quiere deshacer los commits.
+
+git reset --hard id_commit : Deshace los commits locales hasta el commit especificado.
+git reset --hard HEAD~n : Deshace los últimos n commits locales.
+git reset --hard HEAD : Deshace todos los commits locales.
+git reset --soft HEAD : Deshace el último commit local pero mantiene los cambios.
+
+Bisect
+
+El bisect es la operación que permite buscar commits que causan un error. Para hacer un bisect se
+debe estar en la rama donde se quiere buscar el commit.
+
+git bisect start : Inicia la búsqueda.
+git bisect bad : Marca el commit actual como el que causa el error.
+git bisect good id_commit : Marca el commit especificado como el que no causa el error.
+git bisect reset : Finaliza la búsqueda.
+
+Blame
+
+El blame es la operación que permite ver quien hizo cada cambio en un archivo.
+
+git blame nombre_archivo : Muestra quien hizo cada cambio en el archivo especificado.

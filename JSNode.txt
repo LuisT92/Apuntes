@@ -1,0 +1,1803 @@
+para iniciar abrimos la terminal y colocamos el siguiente comando:
+
+npm init
+
+esto nos creara un archivo package.json en el cual se guardaran las dependencias que vamos a instalar.
+
+respondemos cada pregunta que nos haga el comando y al finalizar nos creara el archivo package.json
+
+Nuestro punto de entrada es el archivo index.js que nos indico la terminal al crear el package.json
+asi que creamos el archivo index.js
+
+en este caso creamos otro archivo holamundo.js para empezr con el viaje.
+
+para ejecutarlo usamos el comando:
+
+node holaMundo.js
+
+Script 
+
+Son por ejemplo test que se realizan al codigo para verificar que todo este bien.
+
+Podemos probarlos con el comando:
+
+npm run (nombre del script)
+
+Para crear un script en el package.json debemos agregarlo en la seccion scripts
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "holamundo": "node holaMundo.js"
+  },
+  Aqui podemos ver que creamos un script llamado holamundo que ejecuta el archivo holaMundo.js
+
+  Normalmente este apartado se usa para ejecutar el index.js y se coloca el comando start y podemos ejecutarlo
+    con el comando npm start sin el run
+
+para hacer comentarios en el codigo usamos // o /* */
+
+Tipado y tipos de datos primitivos en JavaScript
+
+JS usa un tipado inferido, es decir que no tenemos que declarar el tipo de dato que va a tener una 
+variable, el interprete lo infiere. Esto tiene sus ventajas y desventajas.
+
+Para imprimir en consola una variable co un texto usamos el comando console.log("texto" + variable)
+O podemos usar la combinacion: `texto ${variable}` dentro de consol.log()
+
+Tipos de datos
+
+primitivos:
+
+number: numeros enteros y decimales
+string: cadenas de texto
+boolean: true o false
+null: valor nulo
+undefined: valor indefinido
+
+Tipos de datos no primitivos:
+
+object: objetos
+array: arreglos
+listas: listas
+mapas: mapas
+
+los tipos de dato null, undefined, false y 0 son falsy, los demas son truthy, es decir que si se 
+evaluan en un if se ejecutara el codigo dentro del if.
+
+Declaracion de variables y escritura dinamica en JavaScript
+
+Existen 3 formas de declarar variables en JS
+
+var: se puede redeclarar y reasignar y es global
+let: no se puede redeclarar pero si reasignar solo aplica en el scope donde se declaro
+const: no se puede redeclarar ni reasignar
+
+Tambien existe un operador en JS que es el typeof que nos permite saber el tipo de dato de una variable
+por ejemplo:
+
+typeof 1 
+retorna number
+
+typeof "hola"
+retorna string
+
+Notacion en JavaScript
+
+existen 5 caracteres especiales en js
+
+- punto y coma
+
+  Delimita el final de una sentencia, aunque no es obligatorio colocarlo, es recomendable colocarlo
+
+- punto
+  
+    Se usa para acceder a las propiedades de un objeto
+
+- corchetes
+
+    Se usa para acceder a los elementos de un arreglo, listas o arrays
+
+-Parentesis
+
+    Se usa para invocar y crear funciones
+
+- llaves
+  
+      Se usa para crear objetos y funciones y estruicturas de control
+
+
+Listas, arrays o arreglos en JavaScript
+
+Los arreglos son estructuras de datos que nos permiten almacenar una lista de elementos, estos 
+elementos pueden ser de cualquier tipo de dato, incluso otros arreglos.
+
+Para crear un arreglo en JS usamos los corchetes y los elementos separados por comas dentro de los
+corchetes, por ejemplo:
+
+const arreglo = [1,2,3,4,5]
+
+o tambien de la siguiente forma:
+
+const arreglo = new Array(1,2,3,4,5)
+
+cuando se crea un Array tenemos 2 opciones para crearlo:
+
+1. const arreglo = new Array(Directamente los elementos)
+
+2. const arreglo = new Array(Longitud del arreglo)
+
+Si creamos un arreglo de la segunda forma y queremos acceder a un elemento que no existe nos retornara
+undefined.
+
+// objetos en JavaScript
+
+Los objetos son estructuras de datos que nos permiten almacenar una lista de elementos, estos 
+elementos pueden ser de cualquier tipo de dato, incluso otros arreglos.
+
+Para crear un objeto en JS usamos las llaves y los elementos separados por comas dentro de las
+llaves, por ejemplo:
+
+const objeto = {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 20
+}
+
+o tambien de la siguiente forma:
+
+const objeto = new Object({
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 20
+})
+
+Podemos tambien crear un objeto dentr de otro objeto de la siguiente forma:
+
+const objeto = {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 20,
+    direccion: {
+        calle: "Calle 1",
+        numero: 123
+    }
+}
+
+Para acceder a los elementos de un objeto usamos la notacion de punto y el nombre de la propiedad
+o si la propiedad tiene espacios usamos la notacion de corchetes y el nombre de la propiedad entre
+comillas.
+
+const objeto = {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 20,
+    direccion: {
+        calle: "Calle 1",
+        numero: 123
+    }
+}
+
+console.log(objeto.nombre)
+console.log(objeto["nombre"])
+
+Para acceder a los elementos de un objeto dentro de otro objeto usamos la notacion de punto y el nombre de la propiedad
+o si la propiedad tiene espacios o guines usamos la notacion de corchetes y el nombre de la propiedad entre
+comillas.
+
+const objeto = {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 20,
+    direccion: {
+        calle: "Calle 1",
+        numero: 123
+    }
+}
+
+console.log(objeto.direccion.calle)
+console.log(objeto["direccion"]["calle"])
+
+Igual se pueden sobreescribir los valores de las propiedades de un objeto de la siguiente forma:
+
+const objeto = {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 20,
+    direccion: {
+        calle: "Calle 1",
+        numero: 123
+    }
+}
+
+objeto.nombre = "Pedro"
+
+console.log(objeto.nombre)
+
+o tambien de la siguiente forma:
+
+objeto["nombre"] = "Pedro"
+
+Fechas en JavaScript
+
+Las fechas en JS son objetos que nos permiten trabajar con fechas y horas.
+
+Podemos usar librerias de apoyo como:
+
+moment.js 
+date-fns
+Etc...
+
+Para crear una fecha en JS usamos la palabra reservada new Date() y se le asigna a una variable
+
+const fecha = new Date()
+
+Si dentro del parentesis colocamos un numero este sera tomado como milisegundos desde el 1 de 
+enero de 1970 y se creara una fecha a partir de ese numero de milisegundos.
+
+const fecha = new Date(1000)
+
+Si dentro del parentesis colocamos una cadena de texto esta sera tomada como una fecha en formato
+ISO 8601 y se creara una fecha a partir de esa cadena de texto.
+
+const fecha = new Date("2021-01-01")
+
+Si dentro del parentesis colocamos 3 numeros estos seran tomados como anio, mes y dia y se creara
+una fecha a partir de esos numeros.
+
+const fecha = new Date(2021, 0, 1)
+
+Si dentro del parentesis colocamos 6 numeros estos seran tomados como anio, mes, dia, hora, minutos
+y segundos y se creara una fecha a partir de esos numeros.
+
+const fecha = new Date(2021, 0, 1, 10, 30, 0)
+
+Si dentro del parentesis colocamos 7 numeros estos seran tomados como anio, mes, dia, hora, minutos,
+segundos y milisegundos y se creara una fecha a partir de esos numeros.
+
+const fecha = new Date(2021, 0, 1, 10, 30, 0, 0)
+
+Para obtener un valor de una fecha usamos los siguientes metodos:
+
+getUTCFullYear() retorna el anio
+getUTCMonth() retorna el mes
+getUTCDate() retorna el dia
+getUTCDay() retorna el dia de la semana
+getUTCHours() retorna la hora
+getUTCMinutes() retorna los minutos
+getUTCSeconds() retorna los segundos
+getUTCMilliseconds() retorna los milisegundos
+
+Por ejemplo:
+
+const fecha = new Date(2021, 0, 1, 10, 30, 0, 0)
+
+console.log(fecha.getUTCFullYear())
+
+TODO SIN EL UTC
+
+Para modificar un valor de una fecha usamos los siguientes metodos:
+
+setUTCFullYear() modifica el anio
+
+Y asi con los demas metodos
+
+Por ejemplo:
+
+const fecha = new Date(2021, 0, 1, 10, 30, 0, 0)
+
+fecha.setUTCFullYear(2022)
+
+console.log(fecha.getUTCFullYear())
+
+Comparar fechas en JavaScript
+
+Para comparar fechas en JS usamos los siguientes metodos:
+
+getTime() retorna el numero de milisegundos desde el 1 de enero de 1970
+
+Por ejemplo:
+
+const fecha1 = new Date(2021, 0, 1, 10, 30, 0, 0)
+const fecha2 = new Date(2022, 0, 1, 10, 30, 0, 0)
+
+console.log(fecha1.getTime() > fecha2.getTime())
+
+En este ejemplo se compara si la fecha1 es mayor que la fecha2 y se imprime en consola true o false,
+para el ejemplo se imprime false porque la fecha1 es menor que la fecha2.
+
+Con el metodo .toLocaleDateString() podemos convertir una fecha a un string en formato de fecha
+local.
+
+Por ejemplo:
+
+const fecha = new Date(2021, 0, 1, 10, 30, 0, 0)
+
+console.log(fecha.toLocaleDateString("es-ES"))
+
+Dentro del parentesis podemos pasar un string con el codigo de un idioma para que la fecha se
+imprima en ese idioma, en este caso se imprime: 01/01/2021
+En este ejemplo se convierte la fecha a un string en formato de fecha local y se imprime en consola
+el string.
+
+Para ver los codigos de idioma de los diferentes paises podemos ir a la siguiente pagina:
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Global_objets/Date/toLocaleDateString
+
+Estructuras de control en JavaScript
+
+Las estructuras de control son bloques de codigo que nos permiten controlar el flujo de ejecucion
+de nuestro codigo.
+
+Las estructuras de control en JS son:
+
+if
+if else
+if else if
+switch
+for
+while
+do while
+for in
+for of
+break
+continue
+return
+throw
+try catch finally
+
+IF
+
+if (condicion) {
+    // codigo
+}
+Esto es un if en JS, si la condicion es verdadera se ejecuta el codigo dentro del bloque de codigo
+del if.
+
+IF ELSE
+
+if (condicion) {
+    // codigo
+} else {
+    // codigo
+}
+Esto es un if else en JS, si la condicion es verdadera se ejecuta el codigo dentro del bloque de codigo
+del if, si la condicion es falsa se ejecuta el codigo dentro del bloque de codigo del else.
+
+IF ELSE IF
+
+if (condicion) {
+    // codigo
+} else if (condicion) {
+    // codigo
+} else {
+    // codigo
+}
+
+Esto es un if else if en JS, si la condicion es verdadera se ejecuta el codigo dentro del bloque de codigo
+del if, si la condicion es falsa se ejecuta el codigo dentro del bloque de codigo del else if, si la condicion
+es falsa se ejecuta el codigo dentro del bloque de codigo del else.
+
+SWITCH
+
+switch (expresion) {
+    case valor1:
+        // codigo
+        break
+    case valor2:
+        // codigo
+        break
+    default:
+        // codigo
+}
+
+Esto es un switch en JS, si la expresion es igual al valor1 se ejecuta el codigo dentro del bloque de codigo
+del case valor1, si la expresion es igual al valor2 se ejecuta el codigo dentro del bloque de codigo
+del case valor2, si la expresion no es igual a ninguno de los valores se ejecuta el codigo dentro del bloque
+de codigo del default.
+
+FOR
+
+for (let i = 0; i < 10; i++) {
+    // codigo
+}
+
+Esto es un for en JS, se ejecuta el codigo dentro del bloque de codigo del for mientras la condicion
+sea verdadera, en cada iteracion se ejecuta el codigo dentro del bloque de codigo del for y se incrementa
+el valor de i en 1.
+
+FOREACH
+
+const array = [1, 2, 3, 4, 5]
+array.forEach((elemento, indice, array) => {
+    // codigo
+})
+
+Esto es un foreach en JS, se ejecuta el codigo dentro del bloque de codigo del foreach para cada elemento
+del array, en cada iteracion se ejecuta el codigo dentro del bloque de codigo del foreach y se pasa como
+parametro el elemento, el indice y el array.
+
+WHILE
+
+let i = 0
+while (i < 10) {
+    // codigo
+    i++
+}
+
+Esto es un while en JS, se ejecuta el codigo dentro del bloque de codigo del while mientras la condicion
+sea verdadera, en cada iteracion se ejecuta el codigo dentro del bloque de codigo del while y se incrementa
+el valor de i en 1.
+
+DO WHILE
+
+let i = 0
+do {
+    // codigo
+    i++
+} while (i < 10)
+
+Esto es un do while en JS, se ejecuta el codigo dentro del bloque de codigo del do while, en cada iteracion
+se ejecuta el codigo dentro del bloque de codigo del do while y se incrementa el valor de i en 1, luego
+se evalua la condicion y si es verdadera se vuelve a ejecutar el codigo dentro del bloque de codigo del
+do while.
+
+FOR IN
+
+const objeto = {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 20,
+    direccion: {
+        calle: "Calle 1",
+        numero: 123
+    }
+}
+
+for (const propiedad in objeto) {
+    console.log(propiedad)
+}
+
+Esto es un for in en JS, se ejecuta el codigo dentro del bloque de codigo del for in mientras la propiedad
+sea una propiedad del objeto, en cada iteracion se ejecuta el codigo dentro del bloque de codigo del for in
+y se asigna a la variable propiedad el nombre de la propiedad del objeto.
+
+FOR OF
+
+const arreglo = [1, 2, 3, 4, 5]
+
+for (const elemento of arreglo) {
+    console.log(elemento)
+}
+
+Esto es un for of en JS, se ejecuta el codigo dentro del bloque de codigo del for of mientras el elemento
+sea un elemento del arreglo, en cada iteracion se ejecuta el codigo dentro del bloque de codigo del for of
+y se asigna a la variable elemento el valor del elemento del arreglo.
+
+BREAK
+
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        break
+    }
+    console.log(i)
+}
+
+Esto es un break en JS, si la condicion es verdadera se rompe el ciclo y se sale del ciclo.
+
+CONTINUE
+
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        continue
+    }
+    console.log(i)
+}
+
+Esto es un continue en JS, si la condicion es verdadera se salta la iteracion actual y se continua con la
+siguiente iteracion.
+
+RETURN
+
+function suma(a, b) {
+    return a + b
+}
+
+Esto es un return en JS, retorna el valor de la expresion que esta despues de return.
+
+THROW
+
+function suma(a, b) {
+    if (typeof a !== "number" || typeof b !== "number") {
+        throw new Error("Los parametros deben ser numeros")
+    }
+    return a + b
+}
+
+Esto es un throw en JS, lanza un error con el mensaje que esta despues de throw.
+
+TRY CATCH FINALLY
+
+try {
+    // codigo
+} catch (error) {
+    // codigo
+} finally {
+    // codigo
+}
+
+Esto es un try catch finally en JS, se ejecuta el codigo dentro del bloque de codigo del try, si ocurre
+un error se ejecuta el codigo dentro del bloque de codigo del catch, si no ocurre un error se ejecuta el
+codigo dentro del bloque de codigo del finally.
+
+MAP
+
+const arreglo = [1, 2, 3, 4, 5]
+const nuevoArreglo = arreglo.map((elemento, indice, arreglo) => {
+    return elemento * 2
+})
+
+Esto es un map en JS, crea un nuevo arreglo con los elementos que retorna la funcion que esta dentro del
+map, en cada iteracion se ejecuta la funcion que esta dentro del map y se pasa como parametro el elemento,
+el indice y el arreglo.
+
+FILTER
+
+const arreglo = [1, 2, 3, 4, 5]
+const nuevoArreglo = arreglo.filter((elemento, indice, arreglo) => {
+    return elemento % 2 === 0
+})
+
+Esto es un filter en JS, crea un nuevo arreglo con los elementos que pasan la condicion que esta dentro
+del filter, en cada iteracion se ejecuta la condicion que esta dentro del filter y se pasa como parametro
+el elemento, el indice y el arreglo.
+
+REDUCE
+
+const arreglo = [1, 2, 3, 4, 5]
+const suma = arreglo.reduce((acumulador, elemento, indice, arreglo) => {
+    return acumulador + elemento
+}, 0)
+
+Esto es un reduce en JS, crea un nuevo valor con los elementos que retorna la funcion que esta dentro del
+reduce, en cada iteracion se ejecuta la funcion que esta dentro del reduce y se pasa como parametro el
+acumulador, el elemento, el indice y el arreglo.
+
+Comparaciones en JavaScript
+
+Las comparaciones en JS son:
+
+== igualdad
+=== igualdad estricta
+!= desigualdad
+!== desigualdad estricta
+> mayor que
+< menor que
+>= mayor o igual que
+<= menor o igual que
+
+===
+Igualdad estricta
+
+const a = 1
+const b = "1"
+console.log(a === b)
+false
+
+Esto es una igualdad estricta en JS, si los valores son iguales y del mismo tipo retorna true, si los
+valores son diferentes o no son del mismo tipo retorna false.
+
+!==
+Desigualdad estricta
+
+const a = 1
+const b = "1"
+console.log(a !== b)
+true
+
+Esto es una desigualdad estricta en JS, si los valores son diferentes o no son del mismo tipo retorna
+true, si los valores son iguales y del mismo tipo retorna false.
+
+Etiquetas (labels) en los bucles en JavaScript
+
+Las etiquetas en los bucles en JS son un identificador que se le asigna a un bucle, se utiliza para poder
+romper un bucle desde otro bucle, por ejemplo:
+
+const arreglo = [1, 2, 3, 4, 5]
+
+arreglo1: for (const elemento of arreglo) {
+    arreglo2: for (const elemento2 of arreglo) {
+        if (elemento === 3 && elemento2 === 3) {
+            break arreglo1
+        }
+        console.log(elemento, elemento2)
+    }
+}
+Aunque el utilizar etiquetas en los bucles no es recomendable, ya que puede generar confusión en el código.
+asi como el usar break y continue en los bucles, ya que puede generar un código difícil de mantener.
+
+Tipos de declareacion de strings y cuando utilizarlos en JavaScript
+
+Las declaraciones de strings en JS son:
+
+const nombre = "Juan"
+const apellido = 'Perez'
+const direccion = `Calle 1`
+
+Esto es una declaracion de string en JS, se utiliza const para declarar una variable que no va a cambiar
+su valor, se utiliza nombre para darle un nombre a la variable, se utiliza = para asignarle un valor a la
+variable y se utiliza "Juan" para asignarle un valor de tipo string a la variable.
+
+Para colocar una frase con comillas dentro de un string se puede hacer de 2 maneras diferentes:
+
+const frase = "El libro dice: \"El mundo es plano\""
+
+const frase = 'El libro dice: "El mundo es plano"'
+
+con las comillas invertidas tambien podemos colocar variables dentro de un string:
+
+const nombre = "Juan"
+const apellido = "Perez"
+const frase = `El nombre completo es: ${nombre} ${apellido}`
+console.log(frase)
+El nombre completo es: Juan Perez
+
+Aunque tambien podemos utilizar las comillas invertidas para colocar plantillas HTML dentro de un 
+string:
+
+const nombre = "Juan"
+const apellido = "Perez"
+const frase = `
+    <h1>El nombre completo es:</h1>
+    <p>${nombre} ${apellido}</p>
+`
+console.log(frase)
+<h1>El nombre completo es:</h1>
+<p>Juan Perez</p>
+
+Metodos mas comunes de los strings en JavaScript
+
+Los metodos mas comunes de los strings en JS son:
+
+toUpperCase()
+
+const nombre = "Juan"
+console.log(nombre.toUpperCase())
+JUAN
+
+Esto es un toUpperCase en JS, convierte el string a mayusculas.
+
+toLowerCase()
+
+const nombre = "Juan"
+console.log(nombre.toLowerCase())
+juan
+
+Esto es un toLowerCase en JS, convierte el string a minusculas.
+
+trim()
+
+const nombre = " Juan "
+console.log(nombre.trim())
+Juan
+
+Esto es un trim en JS, elimina los espacios en blanco al inicio y al final del string.
+
+split()
+
+const nombre = "Juan Perez"
+console.log(nombre.split(" "))
+["Juan", "Perez"]
+
+Esto es un split en JS, convierte el string en un arreglo, se le pasa como parametro el caracter por el
+cual se va a dividir el string.
+
+replace()
+
+const nombre = "Juan Perez"
+console.log(nombre.replace("Juan", "Maria"))
+Maria Perez
+
+Esto es un replace en JS, reemplaza una parte del string por otra, se le pasa como parametro la parte
+del string que se va a reemplazar y la parte del string por la cual se va a reemplazar.
+
+si es que se quiere reemplazar palabras en un texto donde hay mas de una palabra igual, se puede hacer
+de la siguiente manera:
+
+const nombre = "Juan Perez Juan Perez"
+console.log(nombre.replace(/Juan/g, "Maria"))
+Maria Perez Maria Perez
+
+includes()
+
+const nombre = "Juan Perez"
+console.log(nombre.includes("Juan"))
+true
+
+Esto es un includes en JS, verifica si el string incluye una parte del string, se le pasa como parametro
+la parte del string que se va a verificar si esta incluida en el string, retorna true si esta incluida y
+false si no esta incluida.
+
+startsWith()
+
+const nombre = "Juan Perez"
+console.log(nombre.startsWith("Juan"))
+true
+
+Esto es un startsWith en JS, verifica si el string empieza con una parte del string, se le pasa como
+parametro la parte del string que se va a verificar si esta incluida en el string, retorna true si esta
+incluida y false si no esta incluida.
+
+endsWith()
+
+const nombre = "Juan Perez"
+console.log(nombre.endsWith("Perez"))
+true
+
+Esto es un endsWith en JS, verifica si el string termina con una parte del string, se le pasa como
+parametro la parte del string que se va a verificar si esta incluida en el string, retorna true si esta
+incluida y false si no esta incluida.
+
+repeat()
+
+const nombre = "Juan"
+console.log(nombre.repeat(3))
+JuanJuanJuan
+
+Esto es un repeat en JS, repite el string la cantidad de veces que se le pase como parametro, se le pasa
+como parametro la cantidad de veces que se va a repetir el string.
+
+slice()
+
+const nombre = "Juan Perez"
+console.log(nombre.slice(0, 4))
+Juan
+
+Esto es un slice en JS, corta el string desde el indice que se le pase como primer parametro hasta el
+indice que se le pase como segundo parametro, se le pasa como parametro el indice desde donde se va a
+cortar el string y el indice hasta donde se va a cortar el string.
+
+substring()
+
+const nombre = "Juan Perez"
+console.log(nombre.substring(0, 4))
+Juan
+
+Esto es un substring en JS, corta el string desde el indice que se le pase como primer parametro hasta
+el indice que se le pase como segundo parametro, se le pasa como parametro el indice desde donde se va
+a cortar el string y el indice hasta donde se va a cortar el string.
+
+substr()
+
+const nombre = "Juan Perez"
+console.log(nombre.substr(0, 4))
+Juan
+
+Esto es un substr en JS, corta el string desde el indice que se le pase como primer parametro hasta el
+indice que se le pase como segundo parametro, se le pasa como parametro el indice desde donde se va a
+cortar el string y la cantidad de caracteres que se van a cortar del string.
+
+length
+
+const nombre = "Juan Perez"
+console.log(nombre.length)
+10
+
+Esto es un length en JS, retorna la cantidad de caracteres que tiene el string.
+
+indexOf()
+
+const nombre = "Juan Perez"
+console.log(nombre.indexOf("Perez"))
+5
+
+Esto es un indexOf en JS, retorna el indice del string que se le pase como parametro, se le pasa como
+parametro el string del cual se va a retornar el indice.
+
+
+Manipulacion de cadenas de texto en JavaScript
+
+Existen 2 formas de manipular cadenas de texto en JS:
+
+const nombre = "Juan"
+
+const nombreMayusculas = nombre.toUpperCase()
+console.log(nombreMayusculas)
+JUAN
+
+Esto es una manipulacion de cadenas de texto en JS, se utiliza const para declarar una variable que no
+va a cambiar su valor, se utiliza nombre para darle un nombre a la variable, se utiliza = para asignarle
+un valor a la variable y se utiliza "Juan" para asignarle un valor de tipo string a la variable, se utiliza
+const para declarar una variable que no va a cambiar su valor, se utiliza nombreMayusculas para darle
+un nombre a la variable, se utiliza = para asignarle un valor a la variable y se utiliza nombre.toUpperCase()
+para convertir el string a mayusculas y asignarle ese valor a la variable, se utiliza console.log para
+mostrar el valor de la variable en la consola.
+
+const nombre = "Juan"
+
+const nombreMinusculas = nombre.toLowerCase()
+console.log(nombreMinusculas)
+juan
+
+Esto es una manipulacion de cadenas de texto en JS, se utiliza const para declarar una variable que no
+va a cambiar su valor, se utiliza nombre para darle un nombre a la variable, se utiliza = para asignarle
+un valor a la variable y se utiliza "Juan" para asignarle un valor de tipo string a la variable, se utiliza
+const para declarar una variable que no va a cambiar su valor, se utiliza nombreMinusculas para darle
+un nombre a la variable, se utiliza = para asignarle un valor a la variable y se utiliza nombre.toLowerCase()
+para convertir el string a minusculas y asignarle ese valor a la variable, se utiliza console.log para
+mostrar el valor de la variable en la consola.
+
+concatenar
+
+Existen 2 formas de concatenar cadenas de texto en JS:
+
+const nombre = "Juan"
+const apellido = "Perez"
+
+const nombreCompleto = nombre + " " + apellido
+console.log(nombreCompleto)
+Juan Perez
+
+Esto es una concatenacion de cadenas de texto en JS, se utiliza const para declarar una variable que no
+va a cambiar su valor, se utiliza nombre para darle un nombre a la variable, se utiliza = para asignarle
+un valor a la variable y se utiliza "Juan" para asignarle un valor de tipo string a la variable, se utiliza
+const para declarar una variable que no va a cambiar su valor, se utiliza apellido para darle un nombre
+a la variable, se utiliza = para asignarle un valor a la variable y se utiliza "Perez" para asignarle un
+valor de tipo string a la variable, se utiliza const para declarar una variable que no va a cambiar su
+valor, se utiliza nombreCompleto para darle un nombre a la variable, se utiliza = para asignarle un valor
+a la variable y se utiliza nombre + " " + apellido para concatenar el string y asignarle ese valor a la
+variable, se utiliza console.log para mostrar el valor de la variable en la consola.
+
+const nombre = "Juan"
+const apellido = "Perez"
+
+const nombreCompleto = `${nombre} ${apellido}`
+console.log(nombreCompleto)
+Juan Perez
+
+Expresiones regulares en JavaScript
+
+podemos ver mas sobre este tema en:
+
+https://regexr.com/
+
+Las expresiones regulares son una secuencia de caracteres que forma un patron de busqueda, principalmente
+utilizado para la busqueda de patrones de cadenas de caracteres u operaciones de sustitucion.
+
+const nombre = "Juan Perez"
+const regex = /Juan/
+
+console.log(nombre.match(regex))
+["Juan"]
+
+Esto es una expresion regular en JS, se utiliza const para declarar una variable que no va a cambiar su
+valor, se utiliza nombre para darle un nombre a la variable, se utiliza = para asignarle un valor a la
+variable y se utiliza "Juan Perez" para asignarle un valor de tipo string a la variable, se utiliza const
+para declarar una variable que no va a cambiar su valor, se utiliza regex para darle un nombre a la
+variable, se utiliza = para asignarle un valor a la variable y se utiliza /Juan/ para asignarle un valor
+de tipo regex a la variable, se utiliza console.log para mostrar el valor de la variable en la consola.
+
+
+Metodos de busqueda en cadenas de texto en JavaScript
+
+Existen 3 metodos de busqueda en cadenas de texto en JS:
+
+search()
+
+const nombre = "Juan Perez"
+const regex = /Juan/
+
+console.log(nombre.search(regex))
+0
+
+Esto es un search en JS, busca el string que se le pase como parametro, se le pasa como parametro el
+string que se va a buscar en el string.
+
+match()
+
+const nombre = "Juan Perez"
+const regex = /Juan/
+
+console.log(nombre.match(regex))
+["Juan"]
+
+Esto es un match en JS, busca el string que se le pase como parametro, se le pasa como parametro el
+string que se va a buscar en el string.
+
+replace()
+
+const nombre = "Juan Perez"
+const regex = /Juan/
+
+console.log(nombre.replace(regex, "Pedro"))
+Pedro Perez
+
+Esto es un replace en JS, busca el string que se le pase como primer parametro y lo reemplaza por el
+string que se le pase como segundo parametro, se le pasa como primer parametro el string que se va a
+buscar en el string y como segundo parametro el string que se va a reemplazar en el string.
+
+Si existe la palabra en un texto podemos buscarla con un .includes()
+
+const texto = "Hola mundo"
+console.log(texto.includes("mundo"))
+true
+
+Esto es un includes en JS, busca el string que se le pase como parametro, se le pasa como parametro el
+string que se va a buscar en el string.
+
+Si existe la palabra en un texto podemos buscarla con un .startsWith()
+
+const texto = "Hola mundo"
+console.log(texto.startsWith("Hola"))
+true
+
+Esto es un startsWith en JS, busca el string que se le pase como parametro, se le pasa como parametro
+el string que se va a buscar en el string.
+
+Si existe la palabra en un texto podemos buscarla con un .endsWith()
+
+const texto = "Hola mundo"
+console.log(texto.endsWith("mundo"))
+true
+
+Esto es un endsWith en JS, busca el string que se le pase como parametro, se le pasa como parametro el
+string que se va a buscar en el string.
+
+Si existe la palabra en un texto podemos buscarla con un .indexOf()
+
+const texto = "Hola mundo"
+console.log(texto.indexOf("mundo"))
+5
+
+Esto es un indexOf en JS, busca el string que se le pase como parametro, se le pasa como parametro el
+string que se va a buscar en el string.
+
+Numeros y presicion en JavaScript
+
+En JavaScript los numeros son de tipo number, los numeros en JS son de tipo double, es decir, numeros
+con coma flotante, los numeros en JS son de 64 bits, es decir, numeros de 64 bits con coma flotante.
+
+Para declarar un numero no es necesario declarar el tipo de dato, se puede declarar un numero de la
+siguiente manera:
+
+const numero = 10
+console.log(numero)
+10
+
+Precision en JS
+
+const numero1 = 0.1
+const numero2 = 0.2
+
+const total = numero1 + numero2
+console.log(total)
+0.30000000000000004
+
+Esto es una suma de numeros en JS, se utiliza const para declarar una variable que no va a cambiar su
+valor, se utiliza numero1 para darle un nombre a la variable, se utiliza = para asignarle un valor a la
+variable y se utiliza 0.1 para asignarle un valor de tipo number a la variable, se utiliza const para
+declarar una variable que no va a cambiar su valor, se utiliza numero2 para darle un nombre a la
+variable, se utiliza = para asignarle un valor a la variable y se utiliza 0.2 para asignarle un valor de
+tipo number a la variable, se utiliza const para declarar una variable que no va a cambiar su valor, se
+utiliza total para darle un nombre a la variable, se utiliza = para asignarle un valor a la variable y se
+utiliza numero1 + numero2 para sumar los numeros y asignarle ese valor a la variable, se utiliza
+console.log para mostrar el valor de la variable en la consola.
+
+Para solucionar este problema podemos utilizar el metodo toFixed() que nos permite indicar la cantidad
+de decimales que queremos que tenga el numero.
+
+const numero1 = 0.1
+const numero2 = 0.2
+
+const total = numero1 + numero2
+console.log(total.toFixed(2))
+0.30
+
+Tambien podemos utilizar el metodo toPrecision() que nos permite indicar la cantidad de digitos que
+queremos que tenga el numero.
+
+const numero1 = 0.1
+const numero2 = 0.2
+
+const total = numero1 + numero2
+console.log(total.toPrecision(2))
+0.3
+
+Igualmente con el metodo Math.round() podemos redondear el numero.
+
+const numero1 = 0.1
+const numero2 = 0.2
+
+const total = numero1 + numero2
+console.log(Math.round(total))
+0.3
+
+Aunque con el metodo Math.round() no podemos indicar la cantidad de decimales que queremos que tenga
+el numero y tambien debemos usar una operacion matematica para redondear el numero.
+
+const numero1 = 0.1
+const numero2 = 0.2
+
+const total = numero1 + numero2
+console.log(Math.round(total * 100) / 100)
+0.3
+
+Tambien podemos utilizar el metodo Number() para convertir un string a un numero.
+
+const numero1 = 0.1
+const numero2 = 0.2
+
+const total = numero1 + numero2
+console.log(Number(total.toFixed(2)))
+0.3
+
+Tambien podemos utilizar el metodo parseFloat() para convertir un string a un numero.
+
+const numero1 = 0.1
+const numero2 = 0.2
+
+const total = numero1 + numero2
+console.log(parseFloat(total.toFixed(2)))
+0.3
+
+
+Operador -valueOf() en JavaScript
+
+El operador -valueOf() nos permite convertir un objeto a un numero.
+
+const numero = new Number(10)
+console.log(numero.valueOf())
+10
+
+NaN en JavaScript
+
+NaN significa Not a Number, es un valor especial que se utiliza para indicar que un valor no es un
+numero.
+
+const numero2 = new Number("Hola")
+console.log(numero2.valueOf())
+NaN
+
+NaN es un valor especial que se utiliza para indicar que un valor no es un numero.
+
+Cast de string a numero en JavaScript
+
+Para convertir un string a un numero podemos utilizar el metodo Number().
+Para convertir un string a un numero podemos utilizar el metodo parseInt().
+Para convertir un string a un numero podemos utilizar el metodo parseFloat().
+Para convertir un string a un numero podemos utilizar el metodo +.
+
+Numeros hexadecimales en JavaScript
+
+Los numeros hexadecimales son numeros que se representan con letras, los numeros hexadecimales se
+representan con el prefijo 0x.
+
+const numero = 0x10
+console.log(numero)
+16
+
+Valores maximos y minimos en JavaScript
+
+const numero = Number.MAX_VALUE
+console.log(numero)
+
+const numero = Number.MIN_VALUE
+console.log(numero)
+
+tambien para obtener el minimo podemos usar:
+
+const numero = Number.EPSILON
+console.log(numero)
+
+Para elevar un numero a la n potencia podemos usar:
+
+const numero = 2
+console.log(numero ** 3)
+8
+
+Listas en JavaScript
+
+Metodos de mutacion en JavaScript
+
+Los metodos de mutacion son metodos que modifican el array original.
+
+push() agrega un elemento al final del array.
+
+const numeros = [1, 2, 3, 4, 5]
+numeros.push(6)
+console.log(numeros)
+[1, 2, 3, 4, 5, 6]
+
+pop() elimina el ultimo elemento del array.
+
+const numeros = [1, 2, 3, 4, 5]
+numeros.pop()
+console.log(numeros)
+[1, 2, 3, 4]
+
+shift() elimina el primer elemento del array.
+
+const numeros = [1, 2, 3, 4, 5]
+numeros.shift()
+console.log(numeros)
+[2, 3, 4, 5]
+
+unshift() agrega un elemento al principio del array.
+
+const numeros = [1, 2, 3, 4, 5]
+numeros.unshift(0)
+console.log(numeros)
+[0, 1, 2, 3, 4, 5]
+
+splice() elimina o agrega elementos en el array.
+
+const numeros = [1, 2, 3, 4, 5]
+
+// Eliminar elementos
+numeros.splice(1, 2)
+console.log(numeros)
+[1, 4, 5]
+
+// Agregar elementos
+numeros.splice(1, 0, 2, 3)
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+Metodos de no mutacion en JavaScript
+
+Los metodos de no mutacion son metodos que no modifican el array original.
+
+slice() nos permite crear un nuevo array a partir de otro array.
+
+const numeros = [1, 2, 3, 4, 5]
+const nuevoArray = numeros.slice(1, 3)
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+console.log(nuevoArray)
+[2, 3]
+
+concat() nos permite crear un nuevo array a partir de otros arrays.
+
+const numeros = [1, 2, 3, 4, 5]
+const nuevoArray = numeros.concat([6, 7, 8])
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+console.log(nuevoArray)
+[1, 2, 3, 4, 5, 6, 7, 8]
+
+join() nos permite convertir un array en un string.
+
+const numeros = [1, 2, 3, 4, 5]
+const nuevoArray = numeros.join("-")
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+console.log(nuevoArray)
+1-2-3-4-5
+
+Obtencion de fragmentos de listas en JavaScript
+
+slice() nos permite obtener un fragmento de un array.
+
+const numeros = [1, 2, 3, 4, 5]
+const nuevoArray = numeros.slice(1, 3)
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+console.log(nuevoArray)
+[2, 3]
+
+splice() nos permite obtener un fragmento de un array.
+
+const numeros = [1, 2, 3, 4, 5]
+const nuevoArray = numeros.splice(1, 3)
+console.log(numeros)
+[1, 5]
+
+console.log(nuevoArray)
+[2, 3, 4]
+
+Unir 2 listas con el factor de propagacion en JavaScript
+
+const numeros = [1, 2, 3, 4, 5]
+const nuevoArray = [...numeros, 6, 7, 8]
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+console.log(nuevoArray)
+[1, 2, 3, 4, 5, 6, 7, 8]
+
+Metodos de iteracion de listas en JavaScript
+
+forEach() nos permite iterar un array.
+
+const numeros = [1, 2, 3, 4, 5]
+
+numeros.forEach(valor => {
+  console.log(valor)
+})
+
+1
+2
+3
+4
+5
+
+Buscar un valor en un array en JavaScript
+
+find() nos permite buscar un valor en un array.
+
+const numeros = [1, 2, 3, 4, 5]
+
+const numero = numeros.find(valor => {
+    if (valor === 3) {
+    return true 
+    }
+})
+
+console.log(numero)
+3
+
+Este metodo es mas eficiente en la busqueda de un valor en listas de objetos, por ejemplo:      
+
+const personas = [
+  { nombre: "Juan", edad: 23 },
+  { nombre: "Pedro", edad: 24 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Pablo", edad: 27 },
+]
+
+const persona = personas.find(persona => {
+    if (persona.nombre === "Maria") {
+    return true 
+    }
+})
+
+console.log(persona)
+{ nombre: "Maria", edad: 25 }
+
+Otra forma de realizar la misma busqueda es:
+
+const { edad } = personas.find(persona => persona.nombre === "Maria")
+console.log(edad)
+25
+
+Obtencion de listas a partir de otras listas (Avanzado) en JavaScript
+
+map() nos permite iterar un array y crear un nuevo array.
+
+const numeros = [1, 2, 3, 4, 5]
+
+const nuevoArray = numeros.map(valor => valor * 2)
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+console.log(nuevoArray)
+[2, 4, 6, 8, 10]
+
+filter() nos permite iterar un array y crear un nuevo array con los elementos que cumplan una condicion.
+
+const numeros = [1, 2, 3, 4, 5]
+
+const nuevoArray = numeros.filter(valor => valor > 3)
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+console.log(nuevoArray)
+[4, 5]
+
+reduce() nos permite iterar un array y crear un nuevo valor.
+
+const numeros = [1, 2, 3, 4, 5]
+
+const nuevoArray = numeros.reduce((acumulador, valor) => acumulador + valor, 0)
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+console.log(nuevoArray)
+15
+
+Los metodos donde usamos => son metodos de flecha, tambien conocidos como arrow functions.
+Estos aceptan hasta 2 parametros
+
+const numeros = [1, 2, 3, 4, 5]
+
+En ese caso vamos a sumar el indice de cada elemento con su valor.
+
+const nuevoArray = numeros.map((valor, indice) => ${indice} + ${valor})
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+console.log(nuevoArray)
+[1, 3, 5, 7, 9]
+
+si queremos obtener una lista de objetos que cumplan una condicion, podemos usar filter() y map().
+
+const personas = [
+  { nombre: "Juan", edad: 23 },
+  { nombre: "Pedro", edad: 24 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Pablo", edad: 27 },
+]
+
+const personasMayores = personas.filter(persona => persona.edad > 25).map(persona => persona.nombre)
+console.log(personasMayores)
+["Jose", "Pablo"]
+
+Ordenacion de listas en JavaScript
+
+sort() nos permite ordenar un array.
+
+const numeros = [2, 6,1,8,3,762,4,1,0,3,5]
+
+const nuevoArray = numeros.sort()
+console.log(nuevoArray)
+[0, 1, 1, 2, 3, 3, 4, 5, 6, 8, 762]
+
+
+reverse() nos permite invertir un array.
+
+const numeros = [1, 2, 3, 4, 5]
+
+const nuevoArray = numeros.reverse()
+console.log(numeros)
+[1, 2, 3, 4, 5]
+
+console.log(nuevoArray)
+[5, 4, 3, 2, 1]
+
+ordenar listas de objetos en JavaScript
+
+sort() nos permite ordenar un array de objetos.
+
+const personas = [
+  { nombre: "Juan", edad: 23 },
+  { nombre: "Pedro", edad: 24 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Pablo", edad: 27 },
+]
+
+const personasOrdenadas = personas.sort((a, b) => a.edad - b.edad)
+
+console.log(personasOrdenadas)
+[
+  { nombre: "Juan", edad: 23 },
+  { nombre: "Pedro", edad: 24 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Pablo", edad: 27 },
+]
+
+Ordenar listas de objetos por una propiedad en JavaScript
+
+sort() nos permite ordenar un array de objetos.
+
+const personas = [
+  { nombre: "Juan", edad: 23 },
+  { nombre: "Pedro", edad: 24 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Pablo", edad: 27 },
+]
+
+const personasOrdenadas = personas.sort((a, b) => {
+    if (a.nombre > b.nombre) {
+        return 1
+    } else if (a.nombre < b.nombre) {
+        return -1
+    } else {
+        return 0
+    }
+})
+
+console.log(personasOrdenadas)
+[
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Juan", edad: 23 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Pablo", edad: 27 },
+  { nombre: "Pedro", edad: 24 },
+]
+
+Ordenar listas de objetos por una propiedad en JavaScript (Avanzado)
+
+sort() nos permite ordenar un array de objetos.
+
+const personas = [
+  { nombre: "Juan", edad: 23 },
+  { nombre: "Pedro", edad: 24 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Pablo", edad: 27 },
+]
+
+const personasOrdenadas = personas.sort((a, b) => a.nombre.localeCompare(b.nombre))
+
+console.log(personasOrdenadas)
+[
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Juan", edad: 23 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Pablo", edad: 27 },
+  { nombre: "Pedro", edad: 24 },
+]
+
+Comparacion de listas en JavaScript
+
+every() nos permite saber si todos los elementos de un array cumplen una condicion.
+
+const numeros = [1, 2, 3, 4, 5]
+
+const resultado = numeros.every(valor => valor > 0)
+console.log(resultado)
+true
+
+some() nos permite saber si algun elemento de un array cumple una condicion.
+
+const numeros = [1, 2, 3, 4, 5]
+
+const resultado = numeros.some(valor => valor > 4)
+console.log(resultado)
+true
+
+find() nos permite encontrar el primer elemento de un array que cumpla una condicion.
+
+const numeros = [1, 2, 3, 4, 5]
+
+const resultado = numeros.find(valor => valor > 4)
+console.log(resultado)
+5
+
+findIndex() nos permite encontrar el indice del primer elemento de un array que cumpla una condicion.
+
+const numeros = [1, 2, 3, 4, 5]
+
+const resultado = numeros.findIndex(valor => valor > 4)
+console.log(resultado)
+4
+
+
+some() nos permite saber si algun elemento de un array cumple una condicion.
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const resultado = numeros.some(valor => valor > 4)
+console.log(resultado)
+true
+
+Obtener listas a partir de un objeto iterable en JavaScript
+
+const str = "Hola Mundo"
+
+const array = Array.from(str)
+
+console.log(array)
+["H", "o", "l", "a", " ", "M", "u", "n", "d", "o"]
+
+const array = Array.from(str, (valor) => valor.toUpperCase())
+
+console.log(array)
+["H", "O", "L", "A", " ", "M", "U", "N", "D", "O"]
+
+keys
+
+const array = Array.from(str.keys())
+
+console.log(array)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+SETS en JavaScript
+
+Los sets son una coleccion de valores unicos.
+
+const set = new Set()
+set.add(1)
+set.add(2)
+set.add(3)
+set.add(4)
+set.add(5)
+console.log(set)
+Set { 1, 2, 3, 4, 5 }
+
+const set = new Set([1, 2, 3, 4, 5])
+console.log(set)
+Set { 1, 2, 3, 4, 5 }
+
+La diferencia entre un set y un array es que un set no puede tener valores repetidos.
+
+const set = new Set([1, 2, 3, 4, 5, 1, 2, 3, 4, 5])
+console.log(set)
+Set { 1, 2, 3, 4, 5 }
+
+Para eliminar un elemento de un set usamos delete.
+
+set.delete(1)
+console.log(set)
+Set { 2, 3, 4, 5 }
+
+Objetos en JavaScript
+
+Los objetos son una coleccion de propiedades.
+
+const persona = {
+  nombre: "Juan",
+  edad: 23,
+  direccion: {
+    pais: "Mexico",
+    ciudad: "CDMX",
+    edificio: {
+      nombre: "Edificio Principal",
+      telefono: "5555555555"
+    }
+  }
+}
+
+Acceder a las propiedades de un objeto con variables 
+
+const name = "nombre"
+console.log(persona[name])
+"Juan"
+PAra poder copiar la estructura de un objeto y que se copie por valor y no por referencia usamos 
+el operador spread (Factor de propagacion).
+
+const persona2 = { ...persona }
+
+persona2.nombre = "Pedro"
+
+console.log(persona)
+{ nombre: "Juan", edad: 23, direccion: { pais: "Mexico", ciudad: "CDMX", edificio: { nombre: "Edificio Principal", telefono: "5555555555" } } }
+
+console.log(persona2)
+{ nombre: "Pedro", edad: 23, direccion: { pais: "Mexico", ciudad: "CDMX", edificio: { nombre: "Edificio Principal", telefono: "5555555555" } } }
+
+Asi copiamos todo en una direccion de memoria diferente.
+
+Listas de objetos en JavaScript
+
+const personas = [
+  { nombre: "Juan", edad: 23 },
+  { nombre: "Pedro", edad: 24 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Pablo", edad: 27 },
+]
+
+const personas2 = personas.map(persona => ({ ...persona }))
+
+personas2[0].nombre = "Juanito"
+
+console.log(personas)
+[
+  { nombre: "Juan", edad: 23 },
+  { nombre: "Pedro", edad: 24 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Pablo", edad: 27 },
+]
+
+console.log(personas2)
+[
+  { nombre: "Juanito", edad: 23 },
+  { nombre: "Pedro", edad: 24 },
+  { nombre: "Maria", edad: 25 },
+  { nombre: "Jose", edad: 26 },
+  { nombre: "Pablo", edad: 27 },
+]
+
+Con promp() podemos pedirle al usuario que ingrese un valor.
+
+const nombre = prompt("Ingresa tu nombre")
+console.log(nombre)
+
+const numero1 = Number(prompt("Ingresa el primer numero"))
+const numero2 = Number(prompt("Ingresa el segundo numero"))
+
+console.log(numero1 + numero2)
+
+Funciones en JavaScript
+
+Introducciión a las funciones en JavaScript
+
+function sumar() {
+  console.log(2 + 2)
+}
+
+sumar()
+
+function sumar(a, b) {
+  console.log(a + b)
+}
+
+sumar(2, 2)
+
+function sumar(a, b) {
+  return a + b
+}
+
+const resultado = sumar(2, 2)
+
+Estas son las 3 formas de declarar una funcion en JavaScript.
+
+Pasar objetos como parametros en JavaScript
+
+const persona = {
+  nombre: "Juan",
+  profesion: "Desarrollador Web",
+  edad: 30
+}
+
+function mostrarNombreCliente(cliente) {
+    console.log(cliente.nombre)
+}
+
+mostrarNombreCliente(persona)
+
+function mostrarDatosCliente({ nombre, profesion }) {
+    console.log(nombre)
+    console.log(profesion)
+}
+
+mostrarDatosCliente(persona)
+
+Parametros por defecto en JavaScript
+
+function actividad(nombre = "Walter White", actividad = "Enseñar Quimica") {
+  console.log(`La persona ${nombre}, esta realizando la actividad ${actividad}`)
+}
+
+actividad("Juan", "Aprender JavaScript")
+actividad("Pedro", "Aprender React")
+actividad("Maria", "Aprender Vue")
+actividad()
+
+Funcion que recibe parametros con factor de propagacion
+
+function suma(...numeros) {
+ console.log(numeros.reduce((a, b) => a + b))
+}
+
+suma(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+Funciones tipo flecha en JavaScript
+
+const sumar = (a, b) => a + b
+
+A diferencia de las funciones normales, las funciones tipo flecha solo pueden accederse despues 
+de que se declaran.
+
+Funciones tipo flecha con factor de propagacion
+
+const sumar = (...numeros) => numeros.reduce((a, b) => a + b)
+
+sumar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+Funciones tipo flecha con objetos
+
+const persona = {
+  nombre: "Juan",
+  profesion: "Desarrollador Web",
+  edad: 30
+}
+
+const mostrarCliente = ({ nombre, profesion }) => console.log(`El nombre es ${nombre} y su profesion es ${profesion}`)
+mostrarCliente(persona)
+
+Funciones tipo flecha con objetos y factor de propagacion
+
+const persona = {
+  nombre: "Juan",
+  profesion: "Desarrollador Web",
+  edad: 30
+}
+
+const mostrarCliente = ({ nombre, profesion }) => console.log(`El nombre es ${nombre} y su profesion es ${profesion}`)
+
+const mostrarInfo = (...personas) => {
+  console.log(personas)
+}   
+mostrarInfo(persona)
+
+Carga y sobrecarga de funciones en JavaScript
+
+function sumar(a, b) {
+  return a + b
+}
+
+function sumar(a, b, c) {
+  return a + b + c
+}
+
+console.log(sumar(1, 2))
+console.log(sumar(1, 2, 3))
+
+Carga de funciones
+
+function saludar(){
+    hola()
+}
+function hola(){
+    console.log("Hola")
+}
+
+saludar()
+
+Funciones asincronas y promesas en JavaScript
+
+funciones asincronas
+
+Definicion: Una funcion asincrona es una funcion que retorna un objeto asincrono. lo que significa que
+la ejecucion de la funcion no se detiene hasta que el objeto asincrono retorne un valor.
+Un objeto asincrono es un objeto que representa un valor que puede estar disponible ahora, en el futuro
+o nunca.
+
+por ejemplo:
+
+const miPromesa = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promesa resuelta")
+  }, 3000)
+})
+
+miPromesa.then(valor => console.log(valor))
+
+Promesas
+
+Definicion: Una promesa es un objeto que representa el termino o el fracaso eventual de una operacion asincrona.
+Una promesa esta en uno de los siguientes estados:
+
+pendiente: estado inicial, ni cumplido ni rechazado.
+cumplido: significa que la operacion se completo satisfactoriamente.
+rechazado: significa que la operacion fallo.
+
+Una promesa tiene dos metodos, then y catch, los cuales son utilizados para obtener el valor de la promesa cuando esta se cumple o se rechaza.
+
+const miPromesa = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promesa resuelta")
+  }, 3000)
+})
+
+miPromesa.then(valor => console.log(valor))
+
+Funciones Generadoras en JavaScript
+
+Definicion: Una funcion generadora es una funcion especial que retorna una serie de valores segun
+el algoritmo definido.
+
+function* crearGenerador() {
+  yield 1
+  yield "Nombre"
+  yield 3 + 3
+  yield true
+}
+
+const iterador = crearGenerador()
+
+console.log(iterador.next().value)
+console.log(iterador.next().value)
+console.log(iterador.next().value)
+console.log(iterador.next().value)
+
+Por ejemplo creemos una funcion generadora que vaya generando id para una BD.
+
+function* crearGenerador() {
+  let id=0; 
+  while(true) {//mientras sea verdadero va a seguir generando id
+   id++;
+   if(id===10) {//cuando el id sea igual a 10 va a retornar el valor de id y va a terminar la funcion
+     return id;
+   }
+   yield id; //yield es el valor que va a retornar la funcion generadora en cada iteracion
+  }
+}
+
+const iterador = crearGenerador();// creamos el iterador que va a ser la funcion generadora que creamos anteriormente
+
+console.log(iterador.next().value)//imprimimos el valor que retorna la funcion generadora en cada iteracion
+console.log(iterador.next().value)
+
+Gestion de errores en JavaScript

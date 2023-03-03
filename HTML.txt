@@ -1,0 +1,109 @@
+Para colocar un comentario en HTML se usa la etiqueta 
+<!---- comentario ---->
+Etiqutas:
+las que se cierran como:
+<h1></h1>
+y las que no se cierran, como:
+<br> que sirve para crear un salto de linea
+solo se puden poner hasta 6 <h> que son los titulos y en orden ascendente
+el tamaño de la letraz va disminuyendo
+<p> es para colocar parrafos
+<b> es para pomer negritas
+<i> es para poner letras estilo italica
+<strike> tachadas
+<small> letras pequeñas
+<a> sirve para colocar referncias con href="" y van a rutas locales o externas para que se abra en otra
+pestaña se usa target="_blank"
+<br> sirve para crear un salto de linea
+target="_blank" sirve para abrir la pagina en otra ventana
+Para generar listas se ocupan 2 etiquetas, para las ordenadas y para las desordenadas:
+Listas ordenadas 
+<ol> 
+<li> </li>
+</ol>
+Listas desordenadas <ul> </ul>
+<ul>
+<li> </li>
+</ul>
+los div sirven para agrupar elementos 
+<div> 
+    elementos
+</div>
+los span sirven para agrupar elementos en linea
+<span> 
+    elementos   
+</span>
+las imagenes se colocan con la etiqueta <img> y se cierran
+<img src="ruta de la imagen" alt="texto alternativo" width="ancho" height="alto">
+para crear formularios se ocupan las etiquetas <form> </form>
+dentro de esta podemos colocar labels diferentes dependiendo de lo que se requiera, por ejemplo:
+<label for="nombre">Nombre</label>
+<input type="text" name="nombre" id="nombre">
+<label type="password" name="contraseña" id="contraseña">Contraseña</label>
+<input type="password" name="contraseña" id="contraseña">
+<label for="correo">Correo</label>
+<input type="email" name="correo" id="correo">
+En la etiqueta form podemos colocar action="" y method="get" o method="post" para enviar
+los datos a algun otro lugar donde seran procesados, por ejemplo:
+<form action="procesar.php" method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre">
+    <label type="password" name="contraseña" id="contraseña">Contraseña</label>
+    <input type="password" name="contraseña" id="contraseña">
+    <label for="correo">Correo</label>
+    <input type="email" name="correo" id="correo">
+    <button> Enviar </button>
+Cuando los campos sean obligatorios se debe de colocar required al final del label 
+existen diferentes tipos de input, por ejemplo:
+type="text" es para colocar texto
+type="password" es para colocar contraseñas
+type="email" es para colocar correos
+type="number" es para colocar numeros
+    Aqui podemos colocar un rango con min y max al final del label 
+    Igual podemos colocar atributos para que solo se puedan colocar numeros enteros o 
+    decimales de la siguiente manera:
+    <input type="number" name="numero" id="numero" min="0" max="100" step="0.1" o step="2">
+type="tel" es para colocar telefonos
+type="url" es para colocar urls
+type="search" es para colocar busquedas
+type="color" es para colocar colores
+type="range" es para colocar rangos
+type="file" es para colocar archivos
+type="date" es para colocar fechas
+type="time" es para colocar horas
+Tipos de botones en HTML:
+<button> </button> es el boton por defecto
+pero se pueden crear botones de diferentes tipos:
+<button type="submit"> </button> es para enviar datos
+<button type="reset"> </button> es para limpiar los datos
+TAblas en HTML se crean de la siguiente manera:
+<table>
+    <thead>
+        <tr>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> </td>
+        </tr>
+    </tbody>
+</table>
+las tablas se crean con la etiqueta <table> </table>
+dentro de esta se crean los encabezados con la etiqueta <thead> </thead>
+dentro de esta se crean las filas con la etiqueta <tr> </tr>
+dentro de esta se crean las columnas con la etiqueta <th> </th>
+Para colocar imagenes:
+<img src="ruta de la imagen" alt="texto alternativo" width="ancho" height="alto">
+Para insertar videos:
+<video width="ancho" height="alto" controls> si colocamos autoplay se reproduce automaticamente, en este caso poner muted para evitar sonido
+    <source src="ruta del video" type="tipo de video" />
+</video>
+Para insertar audios:
+<audio controls> si colocamos autoplay se reproduce automaticamente, en este caso poner muted para evitar sonido
+    <source src="ruta del audio" type="tipo de audio" />
+</audio>
+Para los 3 tipos podemos usar url externas o locales, por ejemplo:
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+para videos de youtube el source se coloca de la siguiente manera:
+<source src="https://www.youtube.com/embed/VIDEO_ID" type="video/mp4" />

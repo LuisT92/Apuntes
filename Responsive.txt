@@ -1,0 +1,438 @@
+Unidades
+
+Unidades fijas y relativas
+
+LAs unidades fijas en css son las que no cambian de tamaño, como por ejemplo el px, el cm, el mm, 
+el in, el pt y el pc.
+
+Las unidades relativas son las que cambian de tamaño, como por ejemplo el %, el em, el ex, el ch, 
+el rem, el vw, el vh, el vmin, el vmax, el fr.
+
+Unidades fijas ejemplo:
+
+body {
+    font-size: 16px;
+}
+Aqui no importa el tamaño de la pantalla, el tamaño de la fuente siempre sera de 16px.
+
+Unidades relativas ejemplo:
+
+body {
+    width: 50%;
+}
+Aqui el tamaño de la fuente sera del 100% del tamaño de la pantalla o en su caso sera referente a su 
+elemento padre.
+
+Para crear un diseño responsive no debemos de quedarnos solo con viewport o pixels, debemos de
+utilizar unidades relativas para que el diseño se adapte a cualquier dispositivo.
+
+Normalmente se utilizan el em y el rem.
+
+Unidades em
+
+El em es una unidad relativa que se utiliza comunmente para definir el tamaño de la fuente de donde este contenido
+osea del padre.
+
+Unidades rem
+
+El em es una unidad relativa que se utiliza comunmente para definir el tamaño de la fuente pero que
+no depende del padre sino del elemento raiz.
+
+Media queries
+
+Las media queries son una forma de aplicar estilos diferentes dependiendo del tamaño de la pantalla.
+
+Se utiliza la directiva @media para definir las media queries, dentro de esta directiva se definen 
+las condiciones para aplicar los estilos.
+
+@media (max-width: 600px) {
+    body {
+        background-color: red;
+    }
+}
+Esto es una media query que se aplicara cuando el ancho de la pantalla sea menor a 600px.
+
+Podemos usar varias media queries para aplicar diferentes estilos dependiendo del tamaño de la pantalla.
+o tambien podemos usar media queries anidadas.
+
+@media (max-width: 600px) {
+    body {
+        background-color: red;
+    }
+    @media (max-width: 400px) {
+        body {
+            background-color: blue;
+        }
+    }
+}
+Esto es una media query que se aplicara cuando el ancho de la pantalla sea menor a 600px y 
+cuando el ancho de la pantalla sea menor a 400px se aplicara el color azul.
+
+Opciones de media queries:
+
+all: Todas las opciones.
+max-width: El ancho maximo de la pantalla.
+min-width: El ancho minimo de la pantalla.
+max-height: El alto maximo de la pantalla.
+min-height: El alto minimo de la pantalla.
+orientation: La orientacion de la pantalla, puede ser portrait o landscape.
+resolution: La resolucion de la pantalla.
+aspect-ratio: El aspecto de la pantalla.
+device-aspect-ratio: El aspecto del dispositivo.
+device-width: El ancho del dispositivo.
+device-height: El alto del dispositivo.
+device-resolution: La resolucion del dispositivo.
+color: La cantidad de colores que puede mostrar la pantalla.
+color-index: La cantidad de colores que puede mostrar la pantalla.
+monochrome: La cantidad de colores que puede mostrar la pantalla.
+scan: El tipo de escaneo de la pantalla.
+grid: El tipo de grid de la pantalla.
+print: Si la pantalla es para imprimir.
+speech: Si la pantalla es para leer.
+
+Flexbox avanzado
+
+Despues de crear los div o contenedores dodnde asociaremos el flexbox vamos a css a crear los estilos
+
+Sabemos que para crear un flexbox debemos colocar en css:
+
+div {
+    display: flex;
+}
+
+Disopocicion de elementos en fexbox:
+
+para colocarlos en direcciones especificas colocamo:
+
+flex-direction: row (Este esta por defecto) | row-reverse | column | column-reverse;
+
+Asi se tienen 2 ejes el eje principal y el eje transversal.
+
+Eje principal: Es el eje en el que se colocan los elementos, por defecto es horizontal.
+Eje transversal: Es el eje secundario, vertical.
+
+Para alinear los elementos en el eje principal:
+
+justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right | normal | stretch;
+
+Para alinear los elementos en el eje transversal:
+
+align-items: flex-start | flex-end | center | baseline | stretch;
+
+Grid
+
+El grid es un sistema de rejilla que nos permite crear diseños responsivos.
+
+Para crear un grid debemos de crear un contenedor y dentro de este contenedor crear los elementos.
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+Aqui creamos un contenedor con 3 columnas y 3 filas.
+1fr es una fraccion de la pantalla, es decir, si tenemos 3 columnas y 3 filas, cada una de estas 
+columnas y filas tendran el 33% de la pantalla.
+
+Pero tambien podemos hacer lo mismo con;
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+Aqui creamos un contenedor con 3 columnas y 3 filas con la funcion repeat.
+
+Con la palabra auto podemos hacer que el grid se adapte al tamaño de los elementos, ejemplo:
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+}
+Aqui creamos un contenedor con 3 columnas y 3 filas con la funcion repeat y con auto.
+
+Con la palabra minmax podemos hacer que el grid se adapte al tamaño de los elementos, ejemplo:
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+}
+Aqui creamos un contenedor con 3 columnas y 3 filas con la funcion repeat y con minmax.
+
+Podemos hacer que nustros elementos dentro del grid se comporten de diferentes maneras ya sea como 
+head, main, asside, footer, etc. de esta manera:
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+        "header header header"
+        "main main main"
+        "footer footer footer";
+}
+
+Para despues seleccionar uno de ellos y estilizarlo de manera independiente:
+
+.header{
+    grid-area: header;
+}
+Aqui seleccionamos el elemento header y le damos el estilo que queramos.
+
+Para hacer que los elementos se adapten a la pantalla de manera automatica podemos usar la funcion
+auto-fit, ejemplo:
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+}
+Aqui creamos un contenedor con 3 columnas y 3 filas con la funcion repeat, con minmax y con auto-fit.
+
+Para ocupar solo unas columnas especificas podemos colocar:
+grid-column: 1 / 3;
+Aqui estamos diciendo que el elemento ocupe desde la columna 1 hasta la 3.
+Si ocupamos span nos permite ocupar mas de una columna, ejemplo:
+grid-column: span 3;
+Aqui estamos diciendo que el elemento ocupe 3 columnas.
+
+Con grid-area podemos colocar un elemento en una posicion especifica, ejemplo: 
+grid-area: 1 / 1 / 3 / 3;
+se lee de esta manera: 
+grid-area: fila-inicio / columna-inicio / fila-fin / columna-fin;
+
+Variables reutilizables en css
+
+Estas se definen siembre en la pseudoclase :root, ejemplo:
+
+:root{
+    --color: #000;
+    --color2: #fff;
+}
+Donde --color y --color2 son las variables que podemos reutilizar en cualquier parte de nuestro css.
+
+Para llamarlas solo debemos colocar:
+
+color: var(--color);
+color: var(--color2);
+
+Podemos definir tantas variables como queramos y del tipo que queramos ya sea color, tamaño, etc.
+
+
+El sistema de grid en Bootsrap
+
+Podemos importar el layout de grid de bootstrap desde su pagina oficial.
+
+Existen 6 tipos de brakepoints:
+
+xs: Extra small, para < 576px
+sm: Small, para >= 576px
+md: Medium, para >= 768px
+lg: Large, para >= 992px
+xl: Extra large, para >= 1200px
+xxl: Extra extra large, para >= 1400px
+
+BOOTSRTAP
+
+Se importa desde la pagina oficial de bootstrap.
+
+Podemos traer estilos de:
+
+-Tablas
+-Formularios
+-Botones
+-Alertas
+-Card
+-Navbar
+-Modal
+-Tooltip
+-Popover
+-Scrollspy
+-Navs
+-Progress
+-Spinner
+-Toast
+-Offcanvas
+-Carousel
+
+Imagenes
+
+Bootsrap nos permite hacer imagenes responsivas de la siguiente manera:
+
+<img src="imagen.jpg" class="img-fluid" alt="imagen">
+
+Ademas de otros muchos estilos.
+
+Jumbotron
+
+Es un elemento que nos permite crear un banner de manera facil y rapida.
+
+Alertas
+
+Son elementos que nos permiten mostrar mensajes de manera facil y rapida.
+
+Preprocesadores de css
+
+SaaSS
+
+Es un preprocesador de css que nos permite crear estilos de manera mas facil y rapida. 
+Este crea 2 tipos de archivos:
+1. SaSS 
+2. scss 
+Estos se crean en lugar de crear el archivo comun de css.
+
+Variables en SaSS
+
+Las variables en SaSS se definen de la siguiente manera:
+
+$color: #000;
+
+Para llamarlas solo debemos colocar:
+
+color: $color;
+
+Podemos definir tantas variables como queramos y del tipo que queramos ya sea color, tamaño, etc.
+
+mixins en SaSS
+
+Los mixins son funciones que nos permiten reutilizar codigo de manera facil y rapida.
+
+@mixin nombreMixin{
+    //codigo
+}
+
+Para llamarlos solo debemos colocar:
+
+@include nombreMixin;
+
+Dentro de la etiqueta a la que queramos aplicar el mixin.
+
+Tambien podemos crear mixins con parametros, ejemplo:
+
+@mixin nombreMixin($color){
+    color: $color;
+}
+Aqui estamos diciendo que el mixin recibe un parametro llamado color.
+
+Para llamarlos solo debemos colocar:
+
+@include nombreMixin($color);
+
+En este caso recibe la variable que definimos como color
+anteriormente.
+
+Podemos usar operaciones matematicas dentro de los mixins, ejemplo:
+
+@mixin nombreMixin($color){
+    color: $color + 10;
+}
+Aqui estamos diciendo que el mixin recibe un parametro llamado color y le sumamos 10 para 
+darle un color mas claro.
+
+En SaaSS podemos usar anidaciones de una manera mas visual e intuitiva.
+Pr ejemplo dentrop de un div colocamos una lista, asi por ejemplpo podemos hacer:
+
+div{
+    //codigo
+    ul{
+        //codigo
+        li{
+            //codigo
+        }
+    }
+}
+Y se  da estilo a cada elemento de manera independiente.
+
+Para acceder a pseudoclases y pseudoelementos podemos usar el & de la siguiente manera:
+
+div{
+    //codigo
+    &:hover{
+        //codigo
+    }
+}
+Aqui estamos diciendo que cuando el mouse este sobre el div se aplique el estilo que queramos.
+
+Importacion y exportacion de elemntos.
+
+Debemos saber que podemos crear archivos .scss que no sean los principales, para asi poder 
+separa el codigo en diferentes archivos y asi tener un codigo mas ordenado.
+
+para crear estos archivos debemos colocar el nombre del archivo con el prefijo _ y la extension .scss
+ejemplo: _nombre.scss
+
+Para importar estos archivos debemos colocar en el archivo principal:
+
+@import "nombre";
+Sin el prefijo _ y sin la extension .scss
+
+Extends en SaSS
+
+Los extends nos permiten heredar estilos de un elemento a otro.
+
+por ejemplo tenemos un div copn un estilo y queremos que otro div tenga el mismo estilo, pero con algunos
+ligeros cambios en el color, para eso usamos extends.
+
+div{
+    //codigo
+}
+
+div2{
+    @extend div;
+    //codigo
+}
+En este caso el div2 hereda todos los estilos del div y ademas podemos agregarle mas estilos.
+
+Dart Sass
+
+Es el nuevo estandar donde ya no utilizaremos @import para importar archivos, sino que usaremos @use.
+y @forward para exportar archivos. 
+
+Para instalar dart sass debemos colocar en la terminal: 
+
+npm install -g sass
+
+Por lo que debemos tener instalado node.js
+
+Funciones en SaaSS
+
+Existen funciones predeterminadas en SaaSS que nos ayudan a ahorranos codigo.
+
+estas estan en la pagina de SaaSS.
+
+por ejemplo podemos usar una funcion para colocar comillas a un string, ejemplo:
+$string = hola mundo;
+string.quote($string)
+quote($string)
+Esto nos devolvera el string con comillas:
+
+"hola mundo"
+
+Para usar las funciones predeterminadas debemos importar en nuestro archivo .scss principal
+la libreria de esta manera:
+
+@use "sass/builtin";
+
+y dentro del archivo secundario (que se define con _ y la extension .scss) debemos colocar:
+
+@use "sass:string"; 
+
+o la libreria que queremos usar.
+
+con la palabra @debug le enviamos algo a la consola, por ejemplo:
+
+@debug "hola mundo";
+
+Esto nos devolvera en la consola:
+
+hola mundo
+
+Para definir una variable debemos colocar:
+
+$variable: valor;
+
+PAra poder usar los componentes de SaaSS debemos colocar en la consola:
+
+sass --watch carpeta/archivo.scss carpeta/archivo.css

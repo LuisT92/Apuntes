@@ -1,0 +1,14 @@
+Para iniciar hay que descargar el JDK de Oracle, y luego instalarlo.
+Despues ajustamos las variables de entorno, para que el sistema operativo sepa donde esta el JDK, esto en 
+Windows, en Linux y Mac no es necesario.
+
+Instalar JDK en Linux
+
+Esto es lo que hay que hacer para instalar el JDK en Linux, en este caso Ubuntu.
+
+sudo apt-get install openjdk-7-jdk
+
+en este caso se instala la version 7, pero se puede instalar la version 8, solo hay que cambiar 
+el numero 7 por 8.
+
+sudo apt-get install openjdk-8-jdk
