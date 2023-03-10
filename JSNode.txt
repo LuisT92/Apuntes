@@ -1966,3 +1966,69 @@ Para estar mas familiarizado con el manejo de errores podemos ver la documentaci
 winston en el siguiente link:
 
 https://www.npmjs.com/package/winston
+
+Modulos y su utilizacion con CommonJS
+
+Definicion: Un modulo es un conjunto de funciones que se pueden utilizar en otros archivos de JavaScript.
+Los modulos son utilizados para dividir el codigo en diferentes archivos y asi poder reutilizar el codigo
+en diferentes archivos.
+
+CommonJS es un estandar para la creacion de modulos en JavaScript. Este estandar fue creado para poder
+utilizar JavaScript en el servidor.
+
+Para poder utilizar un modulo en otro archivo, tenemos que exportar el modulo y luego importarlo en el
+archivo que lo necesitemos.
+
+Exportar un modulo
+
+Para exportar un modulo tenemos que utilizar la palabra reservada module.exports
+
+module.exports = {
+  sumar: sumar,
+  restar: restar
+}
+
+Importar un modulo
+
+Para importar un modulo tenemos que utilizar la palabra reservada require
+
+const { sumar, restar } = require('./operaciones')
+
+Para mayor control de los modulos es mejor crear una carpeta que se llame modulos y ahi crear los archivos
+de los modulos que necesitemos.
+
+Para saber mas sobre modulos y su utilizacion con CommonJS:
+
+https://nodejs.org/docs/latest-v12.x/api/modules.html
+
+Modulos con ES6
+
+Definicion: Un modulo es un conjunto de funciones que se pueden utilizar en otros archivos de JavaScript.
+Los modulos son utilizados para dividir el codigo en diferentes archivos y asi poder reutilizar el codigo
+en diferentes archivos.
+
+ES6 es un estandar para la creacion de modulos en JavaScript. Este estandar fue creado para poder
+utilizar JavaScript en el cliente.
+
+Para poder utilizar un modulo en otro archivo, tenemos que exportar el modulo y luego importarlo en el
+archivo que lo necesitemos.
+
+Exportar un modulo con ES6
+
+Para exportar un modulo tenemos que utilizar la palabra reservada export
+
+export const sumar = (a, b) => a + b;
+export const restar = (a, b) => a - b;
+
+Importar un modulo con ES6
+
+Para importar un modulo tenemos que utilizar la palabra reservada import
+
+import { sumar, restar } from './operaciones'
+
+Para mayor control de los modulos es mejor crear una carpeta que se llame modulos y ahi crear los archivos
+de los modulos que necesitemos.
+
+Para saber mas sobre modulos y su utilizacion con ES6:
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import

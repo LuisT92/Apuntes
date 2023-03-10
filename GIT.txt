@@ -158,3 +158,18 @@ Blame
 El blame es la operación que permite ver quien hizo cada cambio en un archivo.
 
 git blame nombre_archivo : Muestra quien hizo cada cambio en el archivo especificado.
+
+Stash
+
+El stash es la operación que permite guardar cambios sin hacer commit.
+
+git stash : Guarda los cambios sin hacer commit.
+git stash list : Lista los cambios guardados.
+git stash apply : Aplica los cambios guardados.
+git stash drop : Elimina los cambios guardados.
+
+Cherry-pick
+
+El cherry-pick es la operación que permite traer un commit de otra rama.
+
+git cherry-pick id_commit : Trae el commit especificado de otra rama.
