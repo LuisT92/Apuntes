@@ -2013,6 +2013,17 @@ utilizar JavaScript en el cliente.
 Para poder utilizar un modulo en otro archivo, tenemos que exportar el modulo y luego importarlo en el
 archivo que lo necesitemos.
 
+En el archivo package.json tenemos que agregar el siguiente codigo
+
+"type": "module"
+
+Justo debajo de la linea "main": "index.js"
+
+En la parte de scripts tenemos que agregar el siguiente codigo
+
+"start": "node index.js"
+Cuando ejecutemos el comando npm start, va a ejecutar el archivo index.js
+
 Exportar un modulo con ES6
 
 Para exportar un modulo tenemos que utilizar la palabra reservada export
@@ -2029,6 +2040,75 @@ import { sumar, restar } from './operaciones'
 Para mayor control de los modulos es mejor crear una carpeta que se llame modulos y ahi crear los archivos
 de los modulos que necesitemos.
 
+Expòrtar por defecto
+
+Para exportar por defecto un modulo tenemos que utilizar la palabra reservada export default
+
+export default function saludar(nombre) {
+  return `Hola ${nombre}`;
+}
+
+Esto nos permite importar el modulo sin utilizar las llaves y podemos ponerle el nombre que queramos
+
+import saludar from './saludar';
+console.log(saludar('Juan'));
+
+Importante: Un archivo solo puede tener un export default y no puede tener mas exportaciones 
+de modulos.
+
 Para saber mas sobre modulos y su utilizacion con ES6:
 
 https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import
+
+Librerias node, NPM y su utilizacion
+
+Definicion: NPM es el gestor de paquetes de Node.js. NPM nos permite instalar, actualizar y eliminar
+librerias de Node.js.
+
+Para buscar las librerias que existen y necesitamos podemos ir a la pagina de NPM:
+
+https://www.npmjs.com/
+
+Instalacion de librerias
+
+Para instalar una libreria de Node.js tenemos que utilizar el comando npm install
+
+npm install nombre-de-la-libreria
+
+Ejemplo:
+
+npm install express
+
+Esto nos genera una carpeta node_modules con la libreria express y un archivo package-lock.json
+
+Actualizacion de librerias
+
+Para actualizar una libreria de Node.js tenemos que utilizar el comando npm update
+
+npm update nombre-de-la-libreria
+
+Ejemplo:
+
+npm update express
+
+Esto nos actualiza la libreria express y el archivo package-lock.json
+
+Eliminacion de librerias
+
+Para eliminar una libreria de Node.js tenemos que utilizar el comando npm uninstall
+
+npm uninstall nombre-de-la-libreria
+
+Ejemplo:
+
+npm uninstall express
+
+Esto nos elimina la libreria express y el archivo package-lock.json
+
+Importar librerias
+
+Para importar una libreria de Node.js tenemos que utilizar la palabra reservada import o require
+
+import express from 'express';
+
+const express = require('express');
