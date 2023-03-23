@@ -12,3 +12,1557 @@ en este caso se instala la version 7, pero se puede instalar la version 8, solo 
 el numero 7 por 8.
 
 sudo apt-get install openjdk-8-jdk
+
+Como crear una nueva clase
+
+En nuestro editor de texto creamos un archivo con la extension .java, por ejemplo hola.java
+
+public class hola {
+    public static void main(String[] args) {
+        System.out.println("Hola Mundo");
+    }
+}
+
+Que es la clase main en java
+
+La clase main es la clase principal de un programa en java, es la clase que se ejecuta cuando se ejecuta el programa.
+
+Que es el metodo main en java
+
+El metodo main es el metodo principal de una clase, es el metodo que se ejecuta cuando se ejecuta el programa.
+
+Que es el metodo println en java
+
+El metodo println es un metodo de la clase System.out, que imprime en pantalla el texto que se le pasa como parametro.
+
+Que es el metodo print en java
+
+El metodo print es un metodo de la clase System.out, que imprime en pantalla el texto que se le pasa como parametro.
+
+Que es el metodo System.out en java
+
+El metodo System.out es un metodo de la clase System, que imprime en pantalla el texto que se le pasa como parametro.
+
+Comentarios en java
+
+Los comentarios en java se hacen con //, por ejemplo:
+
+// Esto es un comentario
+
+Para comnetar varias lineas se usa /* y */ por ejemplo:
+
+/*
+Esto es un comentario
+de varias lineas
+*/
+
+Comentarios orientados a la documentación (javaDoc)
+
+Los comentarios orientados a la documentación se hacen con /** y */ por ejemplo:
+
+/**
+ * Esto es un comentario
+ * de varias lineas
+ */
+
+ Podemos usar etiquetas para dar formato al texto, por ejemplo:
+
+/**
+    * Esto es un comentario
+    * de varias lineas
+    * @param nombre Nombre de la persona
+    * @return Devuelve el nombre de la persona
+    */
+
+LAs etiquetas mas usadas son:
+
+@param: para indicar los parametros de un metodo
+@return: para indicar el valor que devuelve un metodo
+@see: para indicar a que metodo hace referencia
+@deprecated: para indicar que un metodo esta obsoleto
+@version: para indicar la version de un metodo
+@exception: para indicar las excepciones que puede lanzar un metodo
+@throws: para indicar las excepciones que puede lanzar un metodo
+@since: para indicar desde que version de java se puede usar un metodo
+@serial: para indicar que un atributo es serializable
+@serialData: para indicar que un atributo es serializable
+@serialField: para indicar que un atributo es serializable
+
+Variables en java
+
+Las variables en java se declaran de la siguiente forma:
+
+tipo nombre;
+
+Por ejemplo:
+
+int numero;
+String nombre;
+
+Las variables en java se inicializan de la siguiente forma:
+
+tipo nombre = valor;
+
+Por ejemplo:
+
+int numero = 10;
+String nombre = "Juan";
+
+Tipos de datos null en java
+
+Los tipos de datos null en java son:
+
+null: es un valor especial que indica que la variable no tiene valor
+
+Este valor null solo puede ser asignado a variables de tipo objeto, por ejemplo:
+
+String nombre = null;
+
+Tipos de datos operadores en java
+
+Los tipos de datos operadores en java son:
+
+Operador: Significado
+
++ : Suma
+- : Resta
+* : Multiplicacion
+/ : Division
+% : Modulo
+++ : Incremento
+-- : Decremento
++= : Suma y asignacion
+-= : Resta y asignacion
+*= : Multiplicacion y asignacion
+/= : Division y asignacion
+%= : Modulo y asignacion
+== : Igual
+
+Para la concatenacion de cadenas se usa el operador + por ejemplo:
+
+String nombre = "Juan";
+String apellido = "Perez";
+String nombreCompleto = nombre + " " + apellido;
+
+Palabras reservadas en java
+
+Las palabras reservadas en java son:
+
+abstract: para definir una clase abstracta
+assert: para hacer una asercion
+boolean: para definir una variable booleana
+break: para salir de un bucle
+byte: para definir una variable byte
+case: para definir un caso de un switch
+catch: para capturar una excepcion
+char: para definir una variable char
+class: para definir una clase
+const: para definir una constante
+continue: para continuar con la siguiente iteracion de un bucle
+default: para definir el caso por defecto de un switch
+do: para definir un bucle do while
+double: para definir una variable double
+else: para definir un else
+enum: para definir un enumerado
+extends: para definir una herencia
+final: para definir una clase final
+finally: para definir un bloque finally
+float: para definir una variable float
+for: para definir un bucle for
+goto: para definir un goto
+if: para definir un if
+implements: para definir una interfaz
+import: para importar una clase
+instanceof: para hacer una comprobacion de tipo
+int: para definir una variable int
+interface: para definir una interfaz
+long: para definir una variable long
+native: para definir un metodo nativo
+new: para crear un objeto
+package: para definir un paquete
+private: para definir un atributo o metodo privado
+protected: para definir un atributo o metodo protegido
+public: para definir un atributo o metodo publico
+return: para definir un return
+short: para definir una variable short
+static: para definir un atributo o metodo estatico
+strictfp: para definir una clase con precision estandar
+super: para hacer referencia a la superclase
+switch: para definir un switch
+synchronized: para definir un metodo sincronizado
+this: para hacer referencia al objeto actual
+throw: para lanzar una excepcion
+throws: para definir las excepciones que puede lanzar un metodo
+transient: para definir un atributo transient
+try: para definir un bloque try
+void: para definir un metodo void
+volatile: para definir un atributo volatile
+while: para definir un bucle while
+
+Nomenclatura de variables y buenas prácticas
+
+Las variables en java se declaran en minusculas, si son varias palabras se separan con guion bajo, por ejemplo:
+
+int numero;
+String nombre_completo;
+
+TAmbien la mejor practica es usar camelCase, por ejemplo:
+
+int numero;
+String nombreCompleto;
+
+Para las clases se usa la primera letra en mayuscula, por ejemplo:
+
+public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println("Hola Mundo");
+    }
+}
+
+Para los metodos se usa la primera letra en minuscula, por ejemplo:
+
+public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println("Hola Mundo");
+    }
+}
+
+Para las constantes se usa mayusculas, por ejemplo:
+
+public class HolaMundo {
+    public static final int NUMERO = 10;
+    public static void main(String[] args) {
+        System.out.println("Hola Mundo");
+    }
+}
+
+Creacion de una funcion
+
+Para crear una funcion en java se usa la palabra reservada public, por ejemplo:
+
+public static void main(String[] args) {
+    System.out.println("Hola Mundo");
+}
+
+Su estructura es la siguiente:
+
+public static tipo nombre(parametros) {
+    // Codigo
+}
+
+Por ejemplo:
+
+public static int suma(int a, int b) {
+    return a + b;
+}
+
+Modificadores de acceso en java
+
+Los modificadores de acceso en java son:
+
+public: para definir un atributo o metodo publico 
+private: para definir un atributo o metodo privado, solo es visible dentro de la clase 
+protected: para definir un atributo o metodo protegido, solo es visible dentro del paquete y las subclases
+
+Otros modificadores son:
+
+static: para definir un atributo o metodo estatico, no necesita instanciar la clase para usarlo 
+final: para definir una clase final, no se puede heredar
+abstract: para definir una clase abstracta, no se puede instanciar
+synchronized: para definir un metodo sincronizado
+native: para definir un metodo nativo
+transient: para definir un atributo transient
+volatile: para definir un atributo volatile
+strictfp: para definir una clase con precision estandar
+void : para definir un metodo void
+
+Ejemplo de modificador void
+
+public static void() {
+    // Codigo
+}
+Lo que va a hacer es ejecutar el codigo que esta dentro de la funcion, pero no va a retornar nada, por ejemplo:
+
+public static void() {
+    System.out.println("Hola Mundo");
+}
+
+Al invocar a la funcion no va a retornar nada,
+
+Sobre carga de funciones en java
+
+La sobre carga de funciones en java es cuando se tiene una funcion con el mismo nombre pero con diferentes parametros, por ejemplo:
+
+public static int suma(int a, int b) {
+    return a + b;
+}
+
+public static int suma(int a, int b, int c) {
+    return a + b + c;
+}
+
+public static int suma(int a, int b, int c, int d) {
+    return a + b + c + d;
+}
+
+Sobrecarga con distintos tipos de datos
+
+public static int suma(int a, int b) {
+    return a + b;
+}
+
+public static int suma(float a, float b) {
+    return a + b;
+}
+
+if else en java
+
+Es una estructura de control que permite ejecutar un bloque de codigo si se cumple una condicion, por ejemplo:
+
+public static void main(String[] args) {
+    int numero = 10;
+    if (numero == 10) {
+        System.out.println("El numero es 10");
+    } else {
+        System.out.println("El numero no es 10");
+    }
+}
+
+else if es recomendable usarlo cuando se tienen mas de dos condiciones, por ejemplo:
+
+public static void main(String[] args) {
+    int numero = 10;
+    if (numero == 10) {
+        System.out.println("El numero es 10");
+    } else if (numero == 20) {
+        System.out.println("El numero es 20");
+    } else {
+        System.out.println("El numero no es 10 ni 20");
+    }
+}
+
+Depuracion de codigo
+
+Para depurar el codigo se usa la palabra reservada System.out.println(), por ejemplo:
+
+public static void main(String[] args) {
+    int numero = 10;
+    System.out.println("El numero es: " + numero);
+}
+
+Podemos en algunos editores de codigo IDE como intelliJ IDEA usar breakpoints y debug para depurar el codigo.
+Osea ir viendo paso a paso como se ejecuta el codigo.
+
+Bucles en java
+
+Bucle for
+
+Es una estructura de control que permite ejecutar un bloque de codigo un numero determinado de veces, por ejemplo:
+
+public static void main(String[] args) {
+    for (int i = 0; i < 10; i++) {
+        System.out.println("El numero es: " + i);
+    }
+}
+
+Bucle while
+
+Es una estructura de control que permite ejecutar un bloque de codigo mientras se cumpla una condicion, por ejemplo:
+
+public static void main(String[] args) {
+    int i = 0;
+    while (i < 10) {
+        System.out.println("El numero es: " + i);
+        i++;
+    }
+}
+
+Bucle do while
+
+Es una estructura de control que permite ejecutar un bloque de codigo mientras se cumpla una condicion, pero la diferencia con el while es que este se ejecuta al menos una vez, por ejemplo:
+
+public static void main(String[] args) {
+    int i = 0;
+    do {
+        System.out.println("El numero es: " + i);
+        i++;
+    } while (i < 10);
+}
+
+Bucle foreach
+
+Es una estructura de control que permite ejecutar un bloque de codigo para cada elemento de un array, por ejemplo:
+
+public static void main(String[] args) {
+    int[] numeros = {1, 2, 3, 4, 5};
+    for (int numero : numeros) {
+        System.out.println("El numero es: " + numero);
+    }
+}
+
+Bucle for infinito
+
+Es una estructura de control que permite ejecutar un bloque de codigo infinitamente, por ejemplo:
+
+public static void main(String[] args) {
+    for (;;) {
+        System.out.println("Hola Mundo");
+    }
+}
+
+Bucle while infinito
+
+Es una estructura de control que permite ejecutar un bloque de codigo infinitamente, por ejemplo:
+
+public static void main(String[] args) {
+    while (true) {
+        System.out.println("Hola Mundo");
+    }
+}
+
+Bucle do while infinito
+
+Es una estructura de control que permite ejecutar un bloque de codigo infinitamente, por ejemplo:
+
+public static void main(String[] args) {
+    do {
+        System.out.println("Hola Mundo");
+    } while (true);
+}
+
+Bucle foreach infinito
+
+Es una estructura de control que permite ejecutar un bloque de codigo infinitamente, por ejemplo:
+
+public static void main(String[] args) {
+    int[] numeros = {1, 2, 3, 4, 5};
+    for (int numero : numeros) {
+        System.out.println("El numero es: " + numero);
+    }
+}
+
+continue y break
+
+Estas palabras se utilizan en los bucles para controlar el flujo del programa, por ejemplo:
+
+public static void main(String[] args) {
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) {
+            continue;
+        }
+        System.out.println("El numero es: " + i);
+    }
+}
+
+Aqui el continue hace que se salte el numero 5 y continue con el siguiente numero.
+
+public static void main(String[] args) {
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) {
+            break;
+        }
+        System.out.println("El numero es: " + i);
+    }
+}
+
+Aqui el break hace que se salte el numero 5 y salga del bucle.
+
+Switch en java
+
+Es una estructura de control que permite ejecutar un bloque de codigo dependiendo de una condicion, por ejemplo:
+
+public static void main(String[] args) {
+    int numero = 10;
+    switch (numero) {
+        case 1:
+            System.out.println("El numero es 1");
+            break;
+        case 2:
+            System.out.println("El numero es 2");
+            break;
+        case 3:
+            System.out.println("El numero es 3");
+            break;
+        default:
+            System.out.println("El numero no es 1, 2 o 3");
+            break;
+    }
+}
+
+Esta se usa cuando se tienen muchas condiciones, si se tienen pocas se recomienda usar if else.
+
+Las clases en java
+
+Una clase es un modelo que define un objeto, por ejemplo:
+
+public class Persona {
+    private String nombre;
+    private String apellido;
+    private int edad;
+
+    public Persona(String nombre, String apellido, int edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+}
+
+dentro del codigo anterior podemos ver varias cosas, los elementos de una clase son:
+
+Modificador de acceso: public
+Palabra reservada: class
+Nombre de la clase: Persona
+Atributos: nombre, apellido, edad   
+Constructor: Persona
+Metodos: getNombre, setNombre, getApellido, setApellido, getEdad, setEdad
+
+Los atributos son las caracteristicas de un objeto, por ejemplo:
+
+private String nombre;
+private String apellido;
+private int edad;
+
+Los constructores son los metodos que se ejecutan cuando se crea un objeto, por ejemplo:
+
+public Persona(String nombre, String apellido, int edad) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = edad;
+}
+
+Los metodos son las acciones que puede realizar un objeto, por ejemplo:
+
+public String getNombre() {
+    return nombre;
+}
+
+public void setNombre(String nombre) {
+    this.nombre = nombre;
+}
+
+public String getApellido() {
+    return apellido;
+}
+
+public void setApellido(String apellido) {
+    this.apellido = apellido;
+}
+
+Crear objetos en java
+
+Para crear un objeto de una clase se usa la palabra reservada new, por ejemplo:
+
+Persona persona = new Persona("Juan", "Perez", 20);
+
+Este nuevo se crea a pertir de la clase que creamos anteriormente, Persona.
+
+Sobrecarga de constructores
+
+Es la capacidad de crear varios constructores en una clase, por ejemplo:
+
+public class Persona {
+    private String nombre;
+    private String apellido;
+    private int edad;
+
+    public Persona(String nombre, String apellido, int edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+
+    public Persona(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Persona() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+}
+
+En este ejemplo se crearon 4 constructores, cada uno con diferente cantidad de parametros.
+
+
+Herencia en java
+
+Es la capacidad de crear una clase a partir de otra, por ejemplo:
+
+public class Persona {
+    private String nombre;
+    private String apellido;
+    private int edad;
+
+    public Persona(String nombre, String apellido, int edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+
+    public Persona(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Persona() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+}   
+
+public class Empleado extends Persona {
+    private double sueldo;
+
+    public Empleado(double sueldo, String nombre, String apellido, int edad) {
+        super(nombre, apellido, edad);
+        this.sueldo = sueldo;
+    }
+
+    public Empleado(double sueldo, String nombre, String apellido) {
+        super(nombre, apellido);
+        this.sueldo = sueldo;
+    }
+
+    public Empleado(double sueldo, String nombre) {
+        super(nombre);
+        this.sueldo = sueldo;
+    }
+
+    public Empleado(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public Empleado() {
+    }
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+}
+
+En este ejemplo se creo una clase Empleado que hereda de la clase Persona, esto quiere decir que la clase Empleado tiene todos los atributos y metodos de la clase Persona, ademas de tener sus propios atributos y metodos.
+
+Sobreescritura en java
+
+Es la capacidad de sobreescribir un metodo de la clase padre, por ejemplo:
+
+public class Persona {
+    private String nombre;
+    private String apellido;
+    private int edad;
+
+    public Persona(String nombre, String apellido, int edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+
+    public Persona(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Persona() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + '}';
+    }
+}
+
+public class Empleado extends Persona {
+    private double sueldo;
+
+    public Empleado(double sueldo, String nombre, String apellido, int edad) {
+        super(nombre, apellido, edad);
+        this.sueldo = sueldo;
+    }
+
+    public Empleado(double sueldo, String nombre, String apellido) {
+        super(nombre, apellido);
+        this.sueldo = sueldo;
+    }
+
+    public Empleado(double sueldo, String nombre) {
+        super(nombre);
+        this.sueldo = sueldo;
+    }
+
+    public Empleado(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public Empleado() {
+    }
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "sueldo=" + sueldo + '}';
+    }
+}
+
+En este ejemplo se sobreescribio el metodo toString de la clase Persona, esto quiere decir que cuando se imprima un objeto de la clase Empleado, se imprimira el metodo toString de la clase Empleado.
+
+Polimorfismo en java
+
+Es la capacidad de crear objetos de una clase padre y asignarlos a una variable de la clase padre, por ejemplo:
+
+public class Persona {
+    private String nombre;
+    private String apellido;
+    private int edad;
+
+    public Persona(String nombre, String apellido, int edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+
+    public Persona(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Persona() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + '}';
+    }
+}
+
+public class Empleado extends Persona {
+    private double sueldo;
+
+    public Empleado(double sueldo, String nombre, String apellido, int edad) {
+        super(nombre, apellido, edad);
+        this.sueldo = sueldo;
+    }
+
+    public Empleado(double sueldo, String nombre, String apellido) {
+        super(nombre, apellido);
+        this.sueldo = sueldo;
+    }
+
+    public Empleado(double sueldo, String nombre) {
+        super(nombre);
+        this.sueldo = sueldo;
+    }
+
+    public Empleado(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public Empleado() {
+    }
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "sueldo=" + sueldo + '}';
+    }
+}
+
+
+public class Principal {
+    public static void main(String[] args) {
+        Persona p1 = new Persona("Juan", "Perez", 20);
+        System.out.println(p1);
+        
+        Empleado e1 = new Empleado(1000, "Juan", "Perez", 20);
+        System.out.println(e1);
+        
+        Persona p2 = new Empleado(1000, "Juan", "Perez", 20);
+        System.out.println(p2);
+    }
+}
+
+En este ejemplo se creo un objeto de la clase Persona y un objeto de la clase Empleado, luego se creo un objeto de la clase Empleado y se asigno a una variable de la clase Persona, esto quiere decir que se puede crear un objeto de una clase hija y asignarlo a una variable de la clase padre.
+
+
+Clases abstractas en java
+
+Es una clase que no se puede instanciar, esto es que no se puede crear un objeto de esta clase, por ejemplo creamos la 
+clase animal:
+
+public abstract class Animal {
+    private String nombre;
+    private int edad;
+
+    public Animal(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public Animal(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Animal() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" + "nombre=" + nombre + ", edad=" + edad + '}';
+    }
+}
+
+Ahora como podemos usar esa clase?
+
+public class Perro extends Animal {
+    private String raza;
+
+    public Perro(String raza, String nombre, int edad) {
+        super(nombre, edad);
+        this.raza = raza;
+    }
+
+    public Perro(String raza, String nombre) {
+        super(nombre);
+        this.raza = raza;
+    }
+
+    public Perro(String raza) {
+        this.raza = raza;
+    }
+
+    public Perro() {
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+
+    @Override
+    public String toString() {
+        return "Perro{" + "raza=" + raza + '}';
+    }
+}
+
+Esta puede ser usada por la clase Perro, pero no se puede instanciar un objeto de la clase Animal, solo
+se puede instanciar un objeto de la clase Perro.
+
+Digamos que las clases abstractas nos sirven para crear una clase padre que no se puede instanciar, 
+pero que si puede ser usada por otras clases.
+
+Polimorfismo en clases abstractas en java
+
+Es la capacidad de crear objetos de una clase padre y asignarlos a una variable de la clase padre, por ejemplo:
+
+public abstract class Animal {
+    private String nombre;
+    private int edad;
+
+    public Animal(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public Animal(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Animal() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" + "nombre=" + nombre + ", edad=" + edad + '}';
+    }
+}
+
+public class Perro extends Animal {
+    private String raza;
+
+    public Perro(String raza, String nombre, int edad) {
+        super(nombre, edad);
+        this.raza = raza;
+    }
+
+    public Perro(String raza, String nombre) {
+        super(nombre);
+        this.raza = raza;
+    }
+
+    public Perro(String raza) {
+        this.raza = raza;
+    }
+
+    public Perro() {
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+
+    @Override
+    public String toString() {
+        return "Perro{" + "raza=" + raza + '}';
+    }
+}
+
+Interfaces en java
+
+Es una clase abstracta que solo tiene metodos abstractos, es decir que solo tiene metodos sin cuerpo, por ejemplo:
+
+public interface Acciones {
+    public void comer();
+    public void dormir();
+    public void jugar();
+}
+
+Ahora podemos crear una clase que implemente esta interfaz:
+
+public class Perro implements Acciones {
+    private String nombre;
+    private int edad;
+
+    public Perro(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public Perro(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Perro() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Perro{" + "nombre=" + nombre + ", edad=" + edad + '}';
+    }
+
+    @Override
+    public void comer() {
+        System.out.println("El perro esta comiendo");
+    }
+
+    @Override
+    public void dormir() {
+        System.out.println("El perro esta durmiendo");
+    }
+
+    @Override
+    public void jugar() {
+        System.out.println("El perro esta jugando");
+    }
+}
+
+Ahora podemos crear un objeto de la clase Perro y usar los metodos de la interfaz Acciones:
+
+public class Principal {
+    public static void main(String[] args) {
+        Perro p1 = new Perro("Firulais", 2);
+        p1.comer();
+        p1.dormir();
+        p1.jugar();
+    }
+}
+
+En este ejemplo se creo un objeto de la clase Perro y se uso los metodos de la interfaz Acciones.
+
+Arays en java
+
+Es una estructura de datos que nos permite almacenar varios valores de un mismo tipo, por ejemplo:
+
+public class Principal {
+    public static void main(String[] args) {
+        int[] numeros = new int[5];
+        numeros[0] = 1;
+        numeros[1] = 2;
+        numeros[2] = 3;
+        numeros[3] = 4;
+        numeros[4] = 5;
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println(numeros[i]);
+        }
+    }
+}
+
+En este ejemplo se creo un array de enteros y se le asignaron valores, luego se recorrio el array y se imprimio cada valor.
+
+Listas en java
+
+Es una estructura de datos que nos permite almacenar varios valores de un mismo tipo, por ejemplo:
+
+import java.util.ArrayList;
+
+public class Principal {
+    public static void main(String[] args) {
+        ArrayList<Integer> numeros = new ArrayList<>();
+        numeros.add(1);
+        numeros.add(2);
+        numeros.add(3);
+        numeros.add(4);
+        numeros.add(5);
+        for (int i = 0; i < numeros.size(); i++) {
+            System.out.println(numeros.get(i));
+        }
+    }
+}
+
+En este ejemplo se creo una lista de enteros y se le asignaron valores, luego se recorrio la lista y se imprimio cada valor.
+
+Tambien podemos iterar la lista con un foreach:
+
+import java.util.ArrayList;
+
+public class Principal {
+    public static void main(String[] args) {
+        ArrayList<Integer> numeros = new ArrayList<>();
+        numeros.add(1);
+        numeros.add(2);
+        numeros.add(3);
+        numeros.add(4);
+        numeros.add(5);
+        for (Integer numero : numeros) {
+            System.out.println(numero);
+        }
+    }
+}
+
+En este ejemplo se creo una lista de enteros y se le asignaron valores, luego se recorrio la lista y se imprimio cada valor.
+
+Tambien podemos usar el metodo forEach de la clase ArrayList:
+
+import java.util.ArrayList;
+
+public class Principal {
+    public static void main(String[] args) {
+        ArrayList<Integer> numeros = new ArrayList<>();
+        numeros.add(1);
+        numeros.add(2);
+        numeros.add(3);
+        numeros.add(4);
+        numeros.add(5);
+        numeros.forEach((numero) -> {
+            System.out.println(numero);
+        });
+    }
+}
+
+En este ejemplo se creo una lista de enteros y se le asignaron valores, luego se recorrio la lista y se imprimio cada valor.
+
+Tambien podemos usar el metodo forEach de la clase ArrayList con una expresion lambda:
+
+import java.util.ArrayList;
+
+public class Principal {
+    public static void main(String[] args) {
+        ArrayList<Integer> numeros = new ArrayList<>();
+        numeros.add(1);
+        numeros.add(2);
+        numeros.add(3);
+        numeros.add(4);
+        numeros.add(5);
+        numeros.forEach(System.out::println);
+    }
+}
+
+En este ejemplo se creo una lista de enteros y se le asignaron valores, luego se recorrio la lista y se imprimio cada valor.
+
+Tambien podemos usar el metodo forEach de la clase ArrayList con una expresion lambda y un metodo de referencia:
+
+import java.util.ArrayList;
+
+public class Principal {
+    public static void main(String[] args) {
+        ArrayList<Integer> numeros = new ArrayList<>();
+        numeros.add(1);
+        numeros.add(2);
+        numeros.add(3);
+        numeros.add(4);
+        numeros.add(5);
+        numeros.forEach(numero -> System.out.println(numero));
+    }
+}
+
+En este ejemplo se creo una lista de enteros y se le asignaron valores, luego se recorrio la lista y se imprimio cada valor.
+
+El metodo toString 
+
+Es un metodo que se hereda de la clase Object y se usa para convertir un objeto en una cadena de texto, por ejemplo:
+
+public class Principal {
+    public static void main(String[] args) {
+        Perro p1 = new Perro("Firulais", 2);
+        System.out.println(p1);
+    }
+}
+
+En este ejemplo se creo un objeto de la clase Perro y se imprimio el objeto, pero como no se sobreescribio el metodo toString, se imprimio la direccion de memoria del objeto.
+
+Para sobreescribir el metodo toString se debe usar la anotacion @Override y retornar una cadena de texto, por ejemplo:
+
+usando @Override
+
+public class Perro {
+    private String nombre;
+    private int edad;
+
+    public Perro(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public Perro(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Perro() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Perro{" + "nombre=" + nombre + ", edad=" + edad + '}';
+    }
+
+    @Override
+    public void comer() {
+        System.out.println("El perro esta comiendo");
+    }
+
+    @Override
+    public void dormir() {
+        System.out.println("El perro esta durmiendo");
+    }
+
+    @Override
+    public void jugar() {
+        System.out.println("El perro esta jugando");
+    }
+}
+
+En este ejemplo se sobreescribio el metodo toString de la clase Perro.
+
+Maps en java
+
+Es una estructura de datos que nos permite almacenar varios valores de un mismo tipo, por ejemplo:
+
+import java.util.HashMap;
+
+public class Principal {
+    public static void main(String[] args) {
+        HashMap<String, String> paises = new HashMap<>();
+        paises.put("Colombia", "Bogota");
+        paises.put("Argentina", "Buenos Aires");
+        paises.put("Peru", "Lima");
+        paises.put("Chile", "Santiago");
+        paises.put("Ecuador", "Quito");
+        paises.forEach((key, value) -> {
+            System.out.println(key + " - " + value);
+        });
+    }
+}
+
+En este ejemplo se creo un map de paises y se le asignaron valores, luego se recorrio el map y se imprimio cada valor.
+
+Tambien podemos usar el metodo forEach de la clase HashMap:
+
+import java.util.HashMap;
+
+public class Principal {
+    public static void main(String[] args) {
+        HashMap<String, String> paises = new HashMap<>();
+        paises.put("Colombia", "Bogota");
+        paises.put("Argentina", "Buenos Aires");
+        paises.put("Peru", "Lima");
+        paises.put("Chile", "Santiago");
+        paises.put("Ecuador", "Quito");
+        paises.forEach((key, value) -> {
+            System.out.println(key + " - " + value);
+        });
+    }
+}
+
+En este ejemplo se creo un map de paises y se le asignaron valores, luego se recorrio el map y se imprimio cada valor.
+
+Tambien podemos usar el metodo forEach de la clase HashMap con una expresion lambda:
+
+import java.util.HashMap;
+
+public class Principal {
+    public static void main(String[] args) {
+        HashMap<String, String> paises = new HashMap<>();
+        paises.put("Colombia", "Bogota");
+        paises.put("Argentina", "Buenos Aires");
+        paises.put("Peru", "Lima");
+        paises.put("Chile", "Santiago");
+        paises.put("Ecuador", "Quito");
+        paises.forEach((key, value) -> System.out.println(key + " - " + value));
+    }
+}
+
+En este ejemplo se creo un map de paises y se le asignaron valores, luego se recorrio el map y se imprimio cada valor.
+
+Tambien podemos usar el metodo forEach de la clase HashMap con una expresion lambda y un metodo de referencia:
+
+import java.util.HashMap;
+
+public class Principal {
+    public static void main(String[] args) {
+        HashMap<String, String> paises = new HashMap<>();
+        paises.put("Colombia", "Bogota");
+        paises.put("Argentina", "Buenos Aires");
+        paises.put("Peru", "Lima");
+        paises.put("Chile", "Santiago");
+        paises.put("Ecuador", "Quito");
+        paises.forEach(System.out::println);
+    }
+}
+
+En este ejemplo se creo un map de paises y se le asignaron valores, luego se recorrio el map y se imprimio cada valor.
+
+Podemos iterar tambien usando ya sea solo las llaves o solo los valores:
+
+import java.util.HashMap;
+
+public class Principal {
+    public static void main(String[] args) {
+        HashMap<String, String> paises = new HashMap<>();
+        paises.put("Colombia", "Bogota");
+        paises.put("Argentina", "Buenos Aires");
+        paises.put("Peru", "Lima");
+        paises.put("Chile", "Santiago");
+        paises.put("Ecuador", "Quito");
+        paises.keySet().forEach(System.out::println);
+        paises.values().forEach(System.out::println);
+    }
+}
+
+En este ejemplo se creo un map de paises y se le asignaron valores, luego se recorrio el map y se imprimio cada valor.
+
+Try catch y finally en java
+
+El bloque try catch es usado para capturar excepciones, esto es muy util cuando se esta trabajando con archivos, 
+redes, bases de datos, etc. nos ayuda a manejar los errores que se puedan presentar y evitar que el programa se 
+caiga o se detenga cuando ocure un error.
+
+Para ocuparlo usamos la palabra reservada try, seguido de un bloque de codigo, luego usamos la palabra reservada catch
+y dentro de los parentesis colocamos el tipo de excepcion que queremos capturar, por ejemplo:
+
+try {
+    // codigo
+} catch (Exception e) {
+    // codigo
+}
+
+En este ejemplo se capturo la excepcion Exception, pero tambien podemos capturar una excepcion especifica, por ejemplo:
+
+try {
+    // codigo
+} catch (IOException e) {
+    // codigo
+}
+
+En este ejemplo se capturo la excepcion IOException, tambien podemos capturar multiples excepciones, por ejemplo:
+
+try {
+    // codigo
+} catch (IOException | SQLException e) {
+    // codigo
+}
+
+En este ejemplo se capturo la excepcion IOException y SQLException, tambien podemos capturar multiples excepciones
+y una excepcion general, por ejemplo:
+
+try {
+    // codigo
+} catch (IOException | SQLException e) {
+    // codigo
+} catch (Exception e) {
+    // codigo
+}
+
+En este ejemplo se capturo la excepcion IOException y SQLException, y tambien se capturo la excepcion general Exception.
+
+Tambien podemos usar el bloque finally, este bloque se ejecuta siempre, ya sea si se capturo una excepcion o no, por ejemplo:
+
+try {
+    // codigo
+} catch (IOException | SQLException e) {
+    // codigo
+} catch (Exception e) {
+    // codigo
+} finally {
+    // codigo
+}
+
+En este ejemplo se capturo la excepcion IOException y SQLException, y tambien se capturo la excepcion general Exception,
+y se ejecuto el bloque finally.
+
+Trows en java
+
+El bloque throws es usado para indicar que un metodo puede lanzar una excepcion, esto es muy util cuando se esta trabajando con archivos,
+redes, bases de datos, etc. nos ayuda a manejar los errores que se puedan presentar y evitar que el programa se
+caiga o se detenga cuando ocure un error.
+
+Para ocuparlo usamos la palabra reservada throws seguido del tipo de excepcion que puede lanzar el metodo, por ejemplo:
+
+public void metodo() throws Exception {
+    // codigo
+}
+
+En este ejemplo se indica que el metodo puede lanzar la excepcion Exception, tambien podemos indicar que el metodo puede lanzar multiples excepciones, por ejemplo:
+
+public void metodo() throws IOException, SQLException {
+    // codigo
+}
+
+En este ejemplo se indica que el metodo puede lanzar la excepcion IOException y SQLException.
+
+Tambien podemos usar el bloque throws en la firma del metodo, por ejemplo:
+
+public void metodo() throws IOException, SQLException;
+
+En este ejemplo se indica que el metodo puede lanzar la excepcion IOException y SQLException.
+
+Tambien podemos usar el bloque throws en la firma del metodo y en el cuerpo del metodo, por ejemplo:
+
+public void metodo() throws IOException, SQLException {
+    // codigo
+}
+
+Ahora bien esa es la palabra trows, pero tambien podemos usar la palabra throw, esta palabra es usada para lanzar una excepcion, por ejemplo:
+
+public void metodo() throws IOException, SQLException {
+    throw new IOException();
+}
+
+En este ejemplo se lanza la excepcion IOException.
+
+En resumen, trows es usado para indicar que un metodo puede lanzar una excepcion, y throw es usado para lanzar una excepcion.
+
+IO estandar en java
+
+El IO estandar es un conjunto de clases que nos permiten leer y escribir datos, tambien nos permite leer y escribir archivos,
+
+Para leer y escribir datos usamos la clase Scanner, para leer archivos usamos la clase FileReader, para escribir archivos usamos la clase FileWriter, para leer y escribir archivos usamos la clase BufferedReader y BufferedWriter, para leer y escribir archivos binarios usamos la clase DataInputStream y DataOutputS
