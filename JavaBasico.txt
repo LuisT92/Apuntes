@@ -1612,3 +1612,230 @@ IO estandar en java
 El IO estandar es un conjunto de clases que nos permiten leer y escribir datos, tambien nos permite leer y escribir archivos,
 
 Para leer y escribir datos usamos la clase Scanner, para leer archivos usamos la clase FileReader, para escribir archivos usamos la clase FileWriter, para leer y escribir archivos usamos la clase BufferedReader y BufferedWriter, para leer y escribir archivos binarios usamos la clase DataInputStream y DataOutputS
+
+Encapsulacion en java
+
+La encapsulacion es un concepto de la programacion orientada a objetos, este concepto nos permite ocultar los detalles de implementacion de un objeto, para que solo se puedan acceder a los atributos y metodos publicos.
+
+Para encapsular un atributo usamos la palabra reservada private, para encapsular un metodo usamos la palabra reservada private, para encapsular una clase usamos la palabra reservada private.
+
+Para acceder a un atributo encapsulado usamos los metodos getter y setter, para acceder a un metodo encapsulado usamos los metodos getter y setter, para acceder a una clase encapsulada usamos los metodos getter y setter.
+
+Para crear un metodo getter usamos la palabra reservada public seguido del tipo de dato que retorna el metodo, seguido del nombre del metodo, seguido de los parentesis, seguido de las llaves, por ejemplo:
+
+public String getNombre() {
+    return nombre;
+}
+
+En este ejemplo se creo un metodo getter para el atributo nombre, para crear un metodo setter usamos la palabra reservada public seguido de la palabra reservada void, seguido del nombre del metodo, seguido de los parentesis, seguido de las llaves, por ejemplo:
+
+public void setNombre(String nombre) {
+    this.nombre = nombre;
+}
+
+En este ejemplo se creo un metodo setter para el atributo nombre.
+
+En resumen, encapsular un atributo es usar la palabra reservada private, encapsular un metodo es usar la palabra reservada private, encapsular una clase es usar la palabra reservada private, acceder a un atributo encapsulado es usar los metodos getter y setter, acceder a un metodo encapsulado es usar los metodos getter y setter, acceder a una clase encapsulada es usar los metodos getter y setter, crear un metodo getter es usar la palabra reservada public seguido del tipo de dato que retorna el metodo, seguido del nombre del metodo, seguido de los parentesis, seguido de las llaves, crear un metodo setter es usar la palabra reservada public seguido de la palabra reservada void, seguido del nombre del metodo, seguido de los parentesis, seguido de las llaves.
+
+Herencia en java
+
+La herencia es un concepto de la programacion orientada a objetos, este concepto nos permite crear una nueva clase a partir de una clase existente, la clase existente se llama clase padre o superclase, la nueva clase se llama clase hija o subclase.
+
+Para heredar una clase usamos la palabra reservada extends, por ejemplo:
+
+public class Persona extends Object {
+    // codigo
+}
+
+En este ejemplo se heredo la clase Object, tambien podemos heredar multiples clases, por ejemplo:
+
+public class Persona extends Object, Serializable {
+    // codigo
+}
+
+En este ejemplo se heredo la clase Object y Serializable.
+
+Tambien podemos heredar una clase y sobreescribir sus metodos, por ejemplo:
+
+public class Persona extends Object {
+    @Override
+    public String toString() {
+        return "Persona";
+    }
+}
+
+En este ejemplo se heredo la clase Object y se sobreescribio el metodo toString.
+
+para instanciar un nuevo objeto de la clase hija usamos la palabra reservada new seguido del nombre de la clase hija, seguido de los parentesis, seguido de las llaves, por ejemplo:
+
+Persona persona = new Persona();
+
+En resumen, heredar una clase es usar la palabra reservada extends, heredar multiples clases es usar la palabra reservada extends seguido de las clases a heredar, heredar una clase y sobreescribir sus metodos es usar la palabra reservada extends seguido de la clase a heredar, seguido de la palabra reservada @Override, seguido del metodo a sobreescribir.
+
+Polimorfismo en java
+
+El polimorfismo es un concepto de la programacion orientada a objetos, este concepto nos permite crear un metodo que pueda ser invocado por diferentes objetos, cada objeto puede tener su propia implementacion del metodo.
+
+Para crear un metodo polimorfico usamos la palabra reservada @Override, por ejemplo:
+
+public class Persona extends Object {
+    @Override
+    public String toString() {
+        return "Persona";
+    }
+}
+
+En este ejemplo se creo un metodo polimorfico, tambien podemos crear un metodo polimorfico que reciba parametros, por ejemplo:
+
+public class Persona extends Object {
+    @Override
+    public String toString(String nombre) {
+        return "Persona " + nombre;
+    }
+}
+
+En este ejemplo se creo un metodo polimorfico que recibe un parametro.
+
+En resumen, crear un metodo polimorfico es usar la palabra reservada @Override, crear un metodo polimorfico que recibe parametros es usar la palabra reservada @Override seguido de los parametros del metodo.
+
+Clases abstractas en java
+
+Las clases abstractas son clases que no pueden ser instanciadas, estas clases solo pueden ser heredadas, estas clases pueden tener metodos abstractos y metodos concretos.
+
+Para crear una clase abstracta usamos la palabra reservada abstract, por ejemplo:
+
+public abstract class Persona extends Object {
+    // codigo
+}
+
+En este ejemplo se creo una clase abstracta, tambien podemos crear una clase abstracta que herede de otra clase abstracta, por ejemplo:
+
+public abstract class Persona extends Object {
+    // codigo
+}
+
+public abstract class Empleado extends Persona {
+    // codigo
+}
+
+En este ejemplo se creo una clase abstracta que hereda de otra clase abstracta.
+
+Para crear un metodo abstracto usamos la palabra reservada abstract, por ejemplo:
+
+public abstract class Persona extends Object {
+    public abstract void metodo();
+}
+
+En este ejemplo se creo un metodo abstracto, tambien podemos crear un metodo abstracto que reciba parametros, por ejemplo:
+
+public abstract class Persona extends Object {
+    public abstract void metodo(String nombre);
+}
+
+En este ejemplo se creo un metodo abstracto que recibe un parametro.
+
+En resumen, crear una clase abstracta es usar la palabra reservada abstract, crear una clase abstracta que herede de otra clase abstracta es usar la palabra reservada abstract seguido de la clase a heredar, crear un metodo abstracto es usar la palabra reservada abstract, crear un metodo abstracto que recibe parametros es usar la palabra reservada abstract seguido de los parametros del metodo.
+
+Modificador static en java
+
+El modificador static es un modificador de acceso, este modificador nos permite acceder a un atributo o metodo sin necesidad de crear un objeto, este modificador se usa para crear variables de clase y metodos de clase.
+
+Para crear una variable de clase usamos la palabra reservada static seguido del tipo de dato de la variable, seguido del nombre de la variable, por ejemplo:
+
+public class Persona extends Object {
+    public static int contador = 0;
+}
+
+En este ejemplo se creo una variable de clase, tambien podemos crear una variable de clase que sea final, por ejemplo:
+
+public class Persona extends Object {
+    public static final int contador = 0;
+}
+
+En este ejemplo se creo una variable de clase que es final.
+
+Para crear un metodo de clase usamos la palabra reservada static seguido del tipo de dato que retorna el metodo, seguido del nombre del metodo, seguido de los parentesis, seguido de las llaves, por ejemplo:
+
+public class Persona extends Object {
+    public static int contador() {
+        return 0;
+    }
+}
+
+En este ejemplo se creo un metodo de clase, tambien podemos crear un metodo de clase que sea final, por ejemplo:
+
+public class Persona extends Object {
+    public static final int contador() {
+        return 0;
+    }
+}
+
+En este ejemplo se creo un metodo de clase que es final.
+
+En resumen, crear una variable de clase es usar la palabra reservada static seguido del tipo de dato de la variable, seguido del nombre de la variable, crear una variable de clase que sea final es usar la palabra reservada static seguido de la palabra reservada final, seguido del tipo de dato de la variable, seguido del nombre de la variable, crear un metodo de clase es usar la palabra reservada static seguido del tipo de dato que retorna el metodo, seguido del nombre del metodo, seguido de los parentesis, seguido de las llaves, crear un metodo de clase que sea final es usar la palabra reservada static seguido de la palabra reservada final, seguido del tipo de dato que retorna el metodo, seguido del nombre del metodo, seguido de los parentesis, seguido de las llaves.
+
+Vectores en java
+
+Los vectores son una estructura de datos que nos permite almacenar multiples valores, los vectores son de tipo generico, es decir, podemos almacenar cualquier tipo de dato.
+
+Para crear un vector usamos la palabra reservada new seguido del tipo de dato que almacenara el vector, seguido de los corchetes, seguido de la cantidad de elementos que tendra el vector, por ejemplo:
+
+Vector <Integer> vector = new Vector();
+
+En este ejemplo se creo un vector de tipo Integer, tambien podemos crear un vector de tipo String, por ejemplo:
+
+Vector <String> vector = new Vector();
+
+En este ejemplo se creo un vector de tipo String.
+
+Para agregar un elemento al vector usamos el metodo add, por ejemplo:
+
+Vector <Integer> vector = new Vector();
+
+vector.add(1);
+
+En este ejemplo se agrego el elemento 1 al vector, tambien podemos agregar un elemento al vector en una posicion especifica, por ejemplo:
+
+Vector <Integer> vector = new Vector();
+
+vector.add(0, 1);
+
+En este ejemplo se agrego el elemento 1 al vector en la posicion 0.
+
+Para obtener un elemento del vector usamos el metodo get, por ejemplo:
+
+Vector <Integer> vector = new Vector();
+
+vector.add(1);
+
+int elemento = vector.get(0);
+
+En este ejemplo se obtuvo el elemento 1 del vector, tambien podemos obtener un elemento del vector en una posicion especifica, por ejemplo:
+
+Vector <Integer> vector = new Vector();
+
+vector.add(0, 1);
+
+int elemento = vector.get(0);
+
+En este ejemplo se obtuvo el elemento 1 del vector en la posicion 0.
+
+Para eliminar un elemento del vector usamos el metodo remove, por ejemplo:
+
+Vector <Integer> vector = new Vector();
+
+vector.add(1);
+
+vector.remove(0);
+
+En este ejemplo se elimino el elemento 1 del vector, tambien podemos eliminar un elemento del vector en una posicion especifica, por ejemplo:
+
+Vector <Integer> vector = new Vector();
+
+vector.add(0, 1);
+
+vector.remove(0);
+
+En este ejemplo se elimino el elemento 1 del vector en la posicion 0.
+
+En resumen, crear un vector es usar la palabra reservada new seguido del tipo de dato que almacenara el vector, seguido de los corchetes, seguido de la cantidad de elementos que tendra el vector, agregar un elemento al vector es usar el metodo add, agregar un elemento al vector en una posicion especifica es usar el metodo add seguido de la posicion, obtener un elemento del vector es usar el metodo get, obtener un elemento del vector en una posicion especifica es usar el metodo get seguido de la posicion, eliminar un elemento del vector es usar el metodo remove, eliminar un elemento del vector en una posicion especifica es usar el metodo remove seguido de la posicion.
