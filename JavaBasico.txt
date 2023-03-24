@@ -138,6 +138,16 @@ Operador: Significado
 %= : Modulo y asignacion
 == : Igual
 
+Operadores logicos en java
+
+Los operadores logicos en java son:
+
+Operador: Significado
+
+&& : AND
+|| : OR
+! : NOT
+
 Para la concatenacion de cadenas se usa el operador + por ejemplo:
 
 String nombre = "Juan";
@@ -236,6 +246,16 @@ public class HolaMundo {
     }
 }
 
+
+Que es una funcion en java
+
+Una funcion en java es un bloque de codigo que se puede reutilizar, por ejemplo:
+
+public static void main(String[] args) {
+    System.out.println("Hola Mundo");
+}
+
+
 Creacion de una funcion
 
 Para crear una funcion en java se usa la palabra reservada public, por ejemplo:
@@ -255,6 +275,32 @@ Por ejemplo:
 public static int suma(int a, int b) {
     return a + b;
 }
+
+Funciones anonimas en java
+
+Las funciones anonimas en java son funciones que no tienen nombre, por ejemplo:
+
+public class HolaMundo {
+    public static void main(String[] args) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Hola Mundo");
+            }
+        }).start();
+    }
+}
+
+la funcion anonima en el ejemplo anterior es:
+
+new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("Hola Mundo");
+    }
+}
+
+Esto porue no tiene nombre, se puede usar para crear un hilo.
 
 Modificadores de acceso en java
 
