@@ -1839,3 +1839,63 @@ vector.remove(0);
 En este ejemplo se elimino el elemento 1 del vector en la posicion 0.
 
 En resumen, crear un vector es usar la palabra reservada new seguido del tipo de dato que almacenara el vector, seguido de los corchetes, seguido de la cantidad de elementos que tendra el vector, agregar un elemento al vector es usar el metodo add, agregar un elemento al vector en una posicion especifica es usar el metodo add seguido de la posicion, obtener un elemento del vector es usar el metodo get, obtener un elemento del vector en una posicion especifica es usar el metodo get seguido de la posicion, eliminar un elemento del vector es usar el metodo remove, eliminar un elemento del vector en una posicion especifica es usar el metodo remove seguido de la posicion.
+
+InputStream, FileInutStream
+
+InputStream es una clase abstracta que nos permite leer datos de un archivo, FileInputStream es una clase que hereda de InputStream, esta clase nos permite leer datos de un archivo.
+
+Para crear un objeto FileInputStream usamos la palabra reservada new seguido del nombre de la clase, seguido de los parentesis, seguido del nombre del archivo, por ejemplo:
+
+FileInputStream archivo = new FileInputStream("archivo.txt");
+
+En este ejemplo se creo un objeto FileInputStream, tambien podemos crear un objeto FileInputStream que reciba un objeto File, por ejemplo:
+
+File archivo = new File("archivo.txt");
+
+En este ejemplo se creo un objeto File
+
+BuferInputStream
+
+BufferedInputStream es una clase que hereda de InputStream, esta clase nos permite leer datos de un archivo.
+
+Para crear un objeto BufferedInputStream usamos la palabra reservada new seguido del nombre de la clase, seguido de los parentesis, seguido del nombre del archivo, por ejemplo:
+
+BufferedInputStream archivo = new BufferedInputStream("archivo.txt");
+
+En este ejemplo se creo un objeto BufferedInputStream.
+
+Scanner
+
+Scanner es una clase que nos permite leer datos de un archivo, para crear un objeto Scanner usamos la palabra reservada new seguido del nombre de la clase, seguido de los parentesis, seguido del nombre del archivo, por ejemplo:
+
+Scanner archivo = new Scanner("archivo.txt");
+
+En este ejemplo se creo un objeto Scanner.
+
+Tambien nos sirve para leer datos desde tecaldo, para crear un objeto Scanner usamos la palabra reservada new seguido del nombre de la clase, seguido de los parentesis, seguido de la palabra System.in, por ejemplo:
+
+Scanner teclado = new Scanner(System.in);
+
+En este ejemplo se creo un objeto Scanner.
+
+PrintStream
+
+PrintStream es una clase que nos permite escribir datos en un archivo, para crear un objeto PrintStream usamos la palabra reservada new seguido del nombre de la clase, seguido de los parentesis, seguido del nombre del archivo, por ejemplo:
+
+PrintStream archivo = new PrintStream("archivo.txt");
+
+En este ejemplo se creo un objeto PrintStream.
+
+Para escribir datos en un archivo usamos el metodo println, por ejemplo:
+
+PrintStream archivo = new PrintStream("archivo.txt");
+
+archivo.println("Hola mundo");
+
+En este ejemplo se escribio en el archivo "Hola mundo".
+
+Tambien nos sirve para escribir datos en la consola, para crear un objeto PrintStream usamos la palabra reservada new seguido del nombre de la clase, seguido de los parentesis, seguido de la palabra System.out, por ejemplo:
+
+PrintStream consola = new PrintStream(System.out);
+
+En este ejemplo se creo un objeto PrintStream.
