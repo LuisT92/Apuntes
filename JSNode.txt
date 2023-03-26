@@ -2276,3 +2276,11 @@ class Desarrollador extends Persona {
 }
 
 Solo asi, sin necesidad de colocar el @override
+
+Linting y ESLint en JavaScript
+
+Definicion: Linting es un proceso de analisis de codigo estatico para encontrar errores de sintaxis o
+buenas practicas.
+
+Definicion: ESLint es una herramienta para analizar el codigo JavaScript y encontrar errores de sintaxis
+o buenas practicas.
