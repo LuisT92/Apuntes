@@ -2284,3 +2284,61 @@ buenas practicas.
 
 Definicion: ESLint es una herramienta para analizar el codigo JavaScript y encontrar errores de sintaxis
 o buenas practicas.
+
+Para poder trabajar con ESLint tenemos que instalarlo, de manera global es la mejor opcion
+
+Para hacerlo dentro de un proyecto de Node.js, tenemos que ir a la carpeta del proyecto donde vamos primero a 
+inicializar el proyecto con:
+
+npm init -y
+
+y luego instalamos ESLint de manera global con:
+
+npm install --save-dev
+
+Ya instlado debemos crear un archivo de instalacion con el comando:
+
+npm init @eslint/config 
+
+Respondemos a todas las preguntas y nos genera un archivo .eslintrc.json
+
+Dentro de ese archivo se pueden configurar las reglas que queremos que se cumplan en nuestro codigo
+
+Para activar o desactivar las reglas se usa:
+
+/* eslint-disable */
+
+para activarlos de nuevo:
+
+/* eslint-enable */
+
+Para desactivar las reglas de una linea en especifico se usa:
+
+// eslint-disable-next-line
+
+Podemos generar un script para poder analizar todo el codigo de nuestro proyecto, dentro de nuestro
+archivo package.json en la seccion scripts agregamos:
+
+"lint": "eslint ." o en su caso en lugar del . podemos colocar el nombre del archivo que queremos analizar
+
+y luego ejecutamos el comando:
+
+npm run lint
+
+para que nos muestre los errores que tenemos en nuestro codigo
+
+Para poder corregir los errores que nos muestra el comando anterior podemos ejecutar el comando:
+
+npm run lint -- --fix
+
+y nos va a corregir los errores que se puedan corregir automaticamente
+
+Para poder instalar las reglas de ESLint para React.js tenemos que ejecutar el comando:
+
+npm install --save-dev eslint-plugin-react
+
+y luego en nuestro archivo .eslintrc.json en la seccion extends agregamos:
+
+"extends": ["eslint:recommended", "plugin:react/recommended"]
+
+y ya podemos empezar a trabajar con ESLint en React.js
