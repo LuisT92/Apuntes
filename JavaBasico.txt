@@ -1899,3 +1899,147 @@ Tambien nos sirve para escribir datos en la consola, para crear un objeto PrintS
 PrintStream consola = new PrintStream(System.out);
 
 En este ejemplo se creo un objeto PrintStream.
+
+Eventos en java
+
+Cuando hablamos de eventos en java nos referimos a lo que ocurre en una interfaz grafica, por ejemplo, cuando presionamos un boton, cuando movemos el mouse, cuando presionamos una tecla, etc.
+
+EventHandler
+
+EventHandler es una clase que nos permite manejar eventos, para crear un objeto EventHandler usamos la palabra reservada new seguido del nombre de la clase, seguido de los parentesis, seguido de los dos puntos, seguido del nombre del metodo que manejara el evento, por ejemplo:
+
+EventHandler<ActionEvent> manejador = new EventHandler<ActionEvent>(){
+
+@Override
+public void handle(ActionEvent event){
+    
+    }
+};
+
+En este ejemplo se creo un objeto EventHandler, tambien podemos crear un objeto EventHandler que reciba un objeto ActionEvent, por ejemplo:
+
+EventHandler<ActionEvent> manejador = new EventHandler<ActionEvent>(){
+        
+        @Override
+        public void handle(ActionEvent event){
+            
+        }
+    };
+
+En este ejemplo se creo un objeto EventHandler que recibe un objeto ActionEvent.
+
+Para manejar un evento usamos el metodo setOnAction, por ejemplo:
+
+EventHandler<ActionEvent> manejador = new EventHandler<ActionEvent>(){
+        
+        @Override
+        public void handle(ActionEvent event){
+            
+        }
+    };
+
+Button boton = new Button("Boton");
+
+boton.setOnAction(manejador);
+
+En este ejemplo se manejo el evento del boton.
+
+Tambien podemos manejar eventos de teclado, para manejar eventos de teclado usamos el metodo setOnKeyPressed, por ejemplo:
+
+EventHandler<KeyEvent> manejador = new EventHandler<KeyEvent>(){
+        
+        @Override
+        public void handle(KeyEvent event){
+            
+        }
+    };
+
+TextField texto = new TextField();
+
+texto.setOnKeyPressed(manejador);
+
+En este ejemplo se manejo el evento del teclado.
+
+Tambien podemos manejar eventos del mouse, para manejar eventos del mouse usamos el metodo setOnMousePressed, por ejemplo:
+
+EventHandler<MouseEvent> manejador = new EventHandler<MouseEvent>(){
+        
+        @Override
+        public void handle(MouseEvent event){
+            
+        }
+    };
+
+Rectangle rectangulo = new Rectangle();
+
+rectangulo.setOnMousePressed(manejador);
+
+En este ejemplo se manejo el evento del mouse.
+
+Swing y JavaFX
+
+Swing es una libreria de java que nos permite crear interfaces graficas, JavaFX es una libreria de java que nos permite crear interfaces graficas.
+
+Para crear una interfaz grafica con swing usamos la clase JFrame, para crear una interfaz grafica con JavaFX usamos la clase Stage.
+
+Para crear un boton con swing usamos la clase JButton, para crear un boton con JavaFX usamos la clase Button.
+
+Para crear un cuadro de texto con swing usamos la clase JTextField, para crear un cuadro de texto con JavaFX usamos la clase TextField.
+
+Para crear un cuadro de texto con swing usamos la clase JTextArea, para crear un cuadro de texto con JavaFX usamos la clase TextArea.
+
+Para crear un cuadro de texto con swing usamos la clase JPasswordField, para crear un cuadro de texto con JavaFX usamos la clase PasswordField.
+
+Para crear un cuadro de texto con swing usamos la clase JCheckBox, para crear un cuadro de texto con JavaFX usamos la clase CheckBox.
+
+Para crear un cuadro de texto con swing usamos la clase JRadioButton, para crear un cuadro de texto con JavaFX usamos la clase RadioButton.
+
+Para crear un cuadro de texto con swing usamos la clase JComboBox, para crear un cuadro de texto con JavaFX usamos la clase ComboBox.
+
+Para crear un cuadro de texto con swing usamos la clase JList, para crear un cuadro de texto con JavaFX usamos la clase ListView.
+
+Para crear un cuadro de texto con swing usamos la clase JTable, para crear un cuadro de texto con JavaFX usamos la clase TableView.
+
+Para crear un cuadro de texto con swing usamos la clase JTree, para crear un cuadro de texto con JavaFX usamos la clase TreeView.
+
+Para crear un cuadro de texto con swing usamos la clase JProgressBar, para crear un cuadro de texto con JavaFX usamos la clase ProgressBar.
+
+Para crear un cuadro de texto con swing usamos la clase JSlider, para crear un cuadro de texto con JavaFX usamos la clase Slider.
+
+Para crear un cuadro de texto con swing usamos la clase JSpinner, para crear un cuadro de texto con JavaFX usamos la clase Spinner.
+
+Para crear un cuadro de texto con swing usamos la clase JColorChooser, para crear un cuadro de texto con JavaFX usamos la clase ColorPicker.
+
+Para crear un cuadro de texto con swing usamos la clase JFileChooser, para crear un cuadro de texto con JavaFX usamos la clase FileChooser.
+
+Para crear un cuadro de texto con swing usamos la clase JDialog, para crear un cuadro de texto con JavaFX usamos la clase Dialog.
+
+Para crear un cuadro de texto con swing usamos la clase JMenuBar, para crear un cuadro de texto con JavaFX usamos la clase MenuBar.
+
+Para crear un cuadro de texto con swing usamos la clase JMenu, para crear un cuadro de texto con JavaFX usamos la clase Menu.
+
+Para crear un cuadro de texto con swing usamos la clase JMenuItem, para crear un cuadro de texto con JavaFX usamos la clase MenuItem.
+
+Para crear un cuadro de texto con swing usamos la clase JToolBar, para crear un cuadro de texto con JavaFX usamos la clase ToolBar.
+
+Para crear un cuadro de texto con swing usamos la clase JTabbedPane, para crear un cuadro de texto con JavaFX usamos la clase TabPane.
+
+Para crear un cuadro de texto con swing usamos la clase JPopupMenu, para crear un cuadro de texto con JavaFX usamos la clase ContextMenu.
+
+Para crear un cuadro de texto con swing usamos la clase JToolTip, para crear un cuadro de texto con JavaFX usamos la clase Tooltip.
+
+Para crear un cuadro de texto con swing usamos la clase JDesktopPane, para crear un cuadro de texto con JavaFX usamos la clase DesktopPane.
+
+Para crear un cuadro de texto con swing usamos la clase JInternalFrame, para crear un cuadro de texto con JavaFX usamos la clase InternalFrame.
+
+Para crear un cuadro de texto con swing usamos la clase JLayeredPane, para crear un cuadro de texto con JavaFX usamos la clase LayeredPane.
+
+Para crear un cuadro de texto con swing usamos la clase JRootPane, para crear un cuadro de texto con JavaFX usamos la clase RootPane.
+
+Para crear un cuadro de texto con swing usamos la clase JScrollBar, para crear un cuadro de texto con JavaFX usamos la clase ScrollBar.
+
+Para crear un cuadro de texto con swing usamos la clase JViewport, para crear un cuadro de texto con JavaFX usamos la clase Viewport.
+
+Para crear un cuadro de texto con swing usamos la clase JWindow, para crear un cuadro de texto con JavaFX usamos la clase Window.
+
+Para crear un cuadro de texto con swing usamos la clase JDialog, para crear un cuadro de texto con JavaFX usamos la clase Dialog.

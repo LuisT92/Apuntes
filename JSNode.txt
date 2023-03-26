@@ -2194,3 +2194,85 @@ console.log(persona.nombreCompleto());
 Persona.saludar();
 
 como se puede notar esto es muy familiar abtrabajar con POO en java 
+
+Para encapsular metodos en Javascript se utilizan diferentes formas:
+
+para Private se utiliza el simbolo # antes del nombre del metodo, por ejemplo:
+
+#metodoPrivado() {
+    console.log('Soy un metodo privado');
+  }
+
+lo mismo con las variables :
+
+#variablePrivada = 'Soy una variable privada';
+
+para Protected se utiliza el simbolo _ antes del nombre del metodo
+
+_metodoProtected() {
+    console.log('Soy un metodo protected');
+  }
+
+lo mismo con las variables:
+
+_variableProtected = 'Soy una variable protected';
+
+Herencia en JavaScript
+
+Para poder heredar de una clase en JavaScript tenemos que utilizar la palabra reservada extends
+
+class Persona {
+  constructor(nombre, apellido) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+  }
+
+  nombreCompleto() {
+    return `${this.nombre} ${this.apellido}`;
+  }
+}
+
+
+class Desarrollador extends Persona {
+  constructor(nombre, apellido, lenguaje) {
+    super(nombre, apellido);
+    this.lenguaje = lenguaje;
+  }
+}
+
+const persona = new Persona('Juan', 'Perez');
+
+console.log(persona.nombreCompleto());
+
+const desarrollador = new Desarrollador('Juan', 'Perez', 'JavaScript');
+
+console.log(desarrollador.nombreCompleto());
+
+Polimorfismo en JavaScript
+
+En este caso hay que sobreescribir el metodo nombreCompleto() de la clase Persona
+
+class Persona {
+  constructor(nombre, apellido) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+  }
+
+  nombreCompleto() {
+    return `${this.nombre} ${this.apellido}`;
+  }
+}
+
+
+class Desarrollador extends Persona {
+  constructor(nombre, apellido, lenguaje) {
+    super(nombre, apellido);
+    this.lenguaje = lenguaje;
+  }
+
+  nombreCompleto() {
+    return `${this.nombre} ${this.apellido} y soy desarrollador/a`;
+  }
+}
+
+Solo asi, sin necesidad de colocar el @override
