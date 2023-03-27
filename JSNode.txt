@@ -2342,3 +2342,158 @@ y luego en nuestro archivo .eslintrc.json en la seccion extends agregamos:
 "extends": ["eslint:recommended", "plugin:react/recommended"]
 
 y ya podemos empezar a trabajar con ESLint en React.js
+
+Html y JavaScript
+
+instalar primero npm http-server con el comando para que se haga de forma global:
+
+npm install --global http-server
+
+Para usar de manera correcta con node JavaScript en HTML debemops hacer uso de la etiqueta script
+y dentro de el atributo src="nombre del archivo" y colocarlo comunmente al final del body
+
+Despues inicializaremos nuestros paquetes de ode con el comanmdo:
+
+npm init -y
+
+despues en nuestro archivo package.json en la seccion scripts agregamos:
+
+"start": "http-server ."
+
+Nos mostrara la direccion donde se esta ejecutando nuestro servidor y ya podemos empezar a trabajar con
+JavaScript en HTML
+
+Para utilizar librerias de terceros en nuestro proyecto de JavaScript en HTML debemos descargarlas
+y colocarlas en la carpeta de nuestro proyecto y luego en nuestro archivo HTML debemos colocar la
+etiqueta script y dentro de el el atributo src="nombre de la libreria"
+
+Ovbio casi siempre se coloca el script al final del body
+
+Eventos en JavaScript
+
+Los eventos son acciones que se realizan en el navegador, como por ejemplo:
+
+click
+mouseover
+mouseout
+keypress
+keydown
+keyup
+focus
+blur
+load
+unload
+resize
+scroll
+submit
+change
+select
+reset
+error
+contextmenu
+
+Para poder trabajar con eventos en JavaScript debemos hacer uso de la etiqueta script y dentro de el
+el atributo onload="nombre de la funcion" y dentro de la funcion colocamos el codigo que queremos
+ejecutar cuando se cargue la pagina web en el navegador.
+
+Cada evento tiene su propia funcion que se ejecuta cuando se produce el evento, por ejemplo: 
+
+onclick
+onmouseover
+ETC..
+
+JQuery 
+
+JQuery es una libreria de JavaScript que nos permite trabajar con el DOM de una manera mas sencilla
+
+Para poder trabajar con JQuery debemos descargar la libreria de la pagina oficial de JQuery y colocarla
+en la carpeta de nuestro proyecto y luego en nuestro archivo HTML debemos colocar la etiqueta script
+y dentro de el el atributo src="nombre de la libreria"
+
+Para poder trabajar con JQuery debemos hacer uso de la funcion $(selector) y dentro de los parentesis
+colocamos el selector que queremos seleccionar, por ejemplo:
+
+$(document)
+$(this)
+$('p')
+$('.clase')
+$('#id')
+ETC..
+
+Para poder trabajar con JQuery debemos hacer uso de la funcion $(selector).accion() y dentro de los parentesis
+colocamos el selector que queremos seleccionar y despues la accion que queremos realizar, por ejemplo:
+
+$(document).ready(function() {
+  // codigo
+});
+
+$(document).ready(() => {
+  // codigo
+});
+
+una manera simplificada de colocar la funcion ready es:
+
+$(() {
+  // codigo
+});
+
+Para mostrar dialogos en pantalla podemos usar dentro de una funcion addEventListener():
+
+alert('mensaje');
+confirm('mensaje');
+prompt('mensaje');
+confirm('mensaje', 'valor por defecto');
+
+Por ejemplo para mostrar un mensaje de alerta cuando se hace clik en un boton podemos hacer lo siguiente:
+
+const boton = document.getElementById('boton');
+o:
+const boton = document.querySelector('#boton');
+
+boton.addEventListener('click', () => {
+  alert('mensaje');
+});
+
+Persistencia de datos en el navegador
+
+Existen 3 formas de almacenar datos en el navegador:
+
+Cookies
+LocalStorage
+SessionStorage
+
+LocalStorage
+
+LocalStorage es un objeto que nos permite almacenar datos en el navegador, para poder trabajar con
+LocalStorage debemos hacer uso de la funcion localStorage.setItem('nombre', 'valor') y para obtener
+el valor de un item debemos hacer uso de la funcion localStorage.getItem('nombre')
+
+Para poder eliminar un item debemos hacer uso de la funcion localStorage.removeItem('nombre')
+
+Para poder eliminar todos los items debemos hacer uso de la funcion localStorage.clear()
+
+Para gusrdae un objeto debemos hacer uso de la funcion JSON.stringify(objeto) y para obtener el objeto
+debemos hacer uso de la funcion JSON.parse(objeto)
+
+SessionStorage
+
+SessionStorage es un objeto que nos permite almacenar datos en el navegador, para poder trabajar con
+SessionStorage debemos hacer uso de la funcion sessionStorage.setItem('nombre', 'valor') y para obtener
+el valor de un item debemos hacer uso de la funcion sessionStorage.getItem('nombre')
+
+Para poder eliminar un item debemos hacer uso de la funcion sessionStorage.removeItem('nombre')
+
+Para poder eliminar todos los items debemos hacer uso de la funcion sessionStorage.clear()
+
+Para gusrdae un objeto debemos hacer uso de la funcion JSON.stringify(objeto) y para obtener el objeto
+debemos hacer uso de la funcion JSON.parse(objeto)
+
+Cookies
+
+Cookies es un objeto que nos permite almacenar datos en el navegador, para poder trabajar con
+Cookies debemos hacer uso de la funcion document.cookie = 'nombre=valor' y para obtener
+el valor de un item debemos hacer uso de la funcion document.cookie
+
+Para fijar el vencimiento de una cookie lo colocamos despues del valor de la cookie y antes del dominio, por ejemplo:
+
+document.cookie ="nombre=valor; expires" + new Date(2020, 11, 24).toUTCString();
