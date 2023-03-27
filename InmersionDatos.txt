@@ -1,0 +1,37 @@
+Curso Alura inmersion en datos
+
+En este curso se va a trabajar con Python y su libreria pandas, en un primer comienzo buscan que trabajemos
+con google colab o colaboratory, que es una herramienta que nos permite trabajar con python en la nube,
+sin necesidad de instalar nada en nuestro ordenador, y que nos permite trabajar con archivos de google drive
+y con google sheets, que es una herramienta de google que nos permite trabajar con hojas de calculo de 
+excel en la nube.
+
+Para iniciar nos tenemos que familiarizar un poco con la plataforma de google colab.
+
+Se puede agregar lineas de codigo y lineas de texto en markdown, para agregar lineas de codigo se
+debe presionar el boton de +code, y para agregar lineas de texto se debe presionar el boton de +text, los 
+atajos de teclado son "B" para agregar una linea de codigo y "M" para agregar una linea de texto.
+
+Ahora, para poder empezar a trabajar con las bases de datos o las hojas de sheets de google, se deben de importar 
+las librerias de google, para esto se debe de ejecutar el siguiente codigo:
+
+from google.colab import drive
+
+Esto lo que hace es importar la libreria de google drive, para poder trabajar con archivos de google drive.
+
+Despues colocamos:
+
+drive.mount('/content/drive')
+
+Esto lo que hace es montar el drive en la ruta /content/drive, y nos va a pedir que nos autenticemos con nuestra cuenta de google.
+
+Ahora despues de conectarnos con nuestra cuenta de google iniciamos con el codigo.
+
+En este caso vamos a importar la bliblioteca Pandas de Python, para esto se debe de ejecutar el siguiente codigo:
+
+import pandas as pd (puede ser cualquier nombre no especificamente pd)
+
+A partir de aqui podriamos trabajar con colab o directamente en nuestro IDE de preferencia, aunque hay 
+que resaltar que colab tiene algunas ventajas como que podemos trabajar con archivos de google drive y
+con google sheets, y que podemos ejecutar codigo en la nube sin necesidad de instalar nada en nuestro ordenador
+al ser una maquina virtual el recurso de hardware puede que nos ayude con el rendimiento de nuestro codigo.
