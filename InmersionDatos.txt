@@ -35,3 +35,102 @@ A partir de aqui podriamos trabajar con colab o directamente en nuestro IDE de p
 que resaltar que colab tiene algunas ventajas como que podemos trabajar con archivos de google drive y
 con google sheets, y que podemos ejecutar codigo en la nube sin necesidad de instalar nada en nuestro ordenador
 al ser una maquina virtual el recurso de hardware puede que nos ayude con el rendimiento de nuestro codigo.
+
+Ya que tenemos la libreria importada podemos empezar a trabajar con los archivos de google drive, para esto
+se debe de ejecutar el siguiente codigo:
+
+variable = pd.read_csv('/content/drive/My Drive/Colab Notebooks/datasets/nombre_del_archivo.csv' (Aqui colocamos la ruta del archivo))
+
+Esto lo que hace es leer el archivo csv y lo guarda en la variable que nosotros le asignemos.
+
+Ahora traeremos las primeras 5 filas de la base de datos con el siguiente codigo:
+
+variable.head()
+
+con el codigo:
+
+variable.shape()
+
+Podemos ver las dimensiones de la base de datos, es decir, el numero de filas y columnas.
+
+nos devuelve algo asi: (filas, columnas)
+
+Si queremos ver los nombres de las colummnas de la base de datos se debe de ejecutar el siguiente codigo:
+
+variable.columns
+
+Nos devuelve una lista con los nombres de las columnas parecida a esto:
+
+Index(['Tipo', 'Descripcion', 'Precio', 'Cantidad', 'Fecha'], dtype='object')
+
+Para cambiar los nombres de los encabezados de las columnas dentro de nuestro entorno y para trabajarlo
+mas facil debemos crear un diccionario con los nombres de las columnas que queremos cambiar y los nombres
+que queremos que tengan, para esto se debe de ejecutar el siguiente codigo:
+
+nombres = {'Tipo': 'tipo', 'Descripcion': 'descripcion', 'Precio': 'precio', 'Cantidad': 'cantidad', 'Fecha': 'fecha'}
+
+Despues de esto se debe de ejecutar el siguiente codigo:
+
+variable = variable.rename(columns=nombres)
+
+para tomar una muestra de nuestra BD se debe de ejecutar el siguiente codigo:
+
+variable.sample(10)
+
+Esto lo que hace es tomar una muestra de 10 filas de nuestra BD.
+
+Con el codigo:
+
+variable.info()
+
+Podemos ver la informacion de nuestra BD, como el tipo de dato de cada columna, el numero de filas y columnas
+y el numero de datos no nulos.
+
+Con el codigo:
+
+variable.iloc[] y dentro de los corchetes colocamos el numero de la fila que queremos ver o el rango de filas 
+que queremos ver separados por comas.
+
+Esto lo que hace es mostrar la fila que nosotros le indiquemos.
+
+Si solo colocamos un numero nos muestra la fila que le indiquemos.
+
+Si queremos el dato especifico de una celda especifica colocariamos lo siguiente:
+
+variable.iloc['Valor'][300]
+
+Esto lo que hace es mostrar el dato de la fila 300 de la columna 'Valor'.
+
+igual puede hacerse con un rango de valores en ilas:
+
+variable.iloc['Valor'][300:400]
+
+Esto lo que hace es mostrar los datos de las filas 300 a 400 de la columna 'Valor'.
+
+Para calcular el promedio de alguna columna se debe de ejecutar el siguiente codigo:
+
+variable.'valor'.mean()
+
+Esto lo que hace es calcular el promedio de la columna 'valor'.
+
+Para filtrar por un valor especifico de una columna se debe de ejecutar el siguiente codigo:
+
+variable.'Columna' == 'Valor'
+
+Para saber cuantos valores hay en el filtro que acabamos de hacer se debe de ejecutar el siguiente codigo:
+
+variable2 = (variable.'Columna' == 'Valor')
+
+Aqui creamos una variable que va a contener el filtro que acabamos de hacer. 
+
+Podemos ahora trabajar solo con la variable2
+
+variable2.'variable'.value_counts()
+
+Esto lo que hace es contar cuantos valores hay en la columna 'variable' del filtro que acabamos de hacer.
+
+Para realizar graficas de nuestros datos se debe de ejecutar el siguiente codigo:
+
+variable.'Columna'.value_counts().plot().bar()
+
+Esto lo que hace es graficar la columna 'Columna' de nuestro filtro.
