@@ -1,0 +1,83 @@
+Para craear un nuevo proyecto en la terminal debemos colocar el comando:
+
+npm create astro@latest
+
+Luego de esto, nos pedirá que le indiquemos el nombre del proyecto, el cual puede ser el que queramos.
+
+Ademas nos pedira que le indiquemos si usaremos algun template, si vamos a usar typescript, si queremos instalar dependencias (aqui le diremos que si siempre) y si queremos crear un nuevo repo en github.
+
+Para "iniciar" o "Arrancar" el servidor debemos colocar en una consola el comando:
+
+npm run dev
+
+Esto nos mostrara en el puerto http://localhost:3000/ lo que se ha creado, asi como en Angular es el puerto http://localhost:4200
+
+Estructura de un proyecto en Astro
+
+.vscode
+
+Carpeta que contiene la configuración de VSCode para el proyecto.
+
+Aqui se encuentra el archivo launch.json, el cual contiene la configuración para poder debuggear el proyecto y el archivo extensions.json, el cual contiene las extensiones que se instalaron para el proyecto.
+
+node_modules
+
+Carpeta que contiene todas las dependencias del proyecto.
+
+Aqui se encuentran todas las dependencias que se instalaron para el proyecto.
+
+public
+
+Carpeta que contiene los archivos estáticos del proyecto.
+
+Aqui se encuentran los archivos estáticos del proyecto, como por ejemplo el favicon.ico, el index.html, el manifest.json, el robots.txt, etc.
+
+src
+
+Carpeta que contiene los archivos de código fuente del proyecto.
+
+Aqui se encuentran los archivos de código fuente del proyecto, como por ejemplo los componentes, los servicios, los estilos, etc.
+
+.gitignore
+
+Archivo que contiene los archivos que no se deben subir al repositorio.
+
+Aqui se encuentran los archivos que no se deben subir al repositorio, como por ejemplo los archivos de configuración de VSCode, los archivos de configuración de la terminal, los archivos de configuración de la carpeta node_modules, etc.
+
+package-lock.json
+
+Archivo que contiene la información de las dependencias del proyecto.
+
+Astro.config.json
+
+Archivo que contiene la configuración del proyecto.
+
+Aqui se encuentra la configuración del proyecto, como por ejemplo el nombre del proyecto, la versión del proyecto, la descripción del proyecto, etc.
+
+Igual aqui podemos configurar el proyecto para usar por ejemplo twillwindcss, React, etc.
+
+package.json
+
+Archivo que contiene la información del proyecto.
+
+Aqui se encuentra la información del proyecto, como por ejemplo el nombre del proyecto, la versión del proyecto, la descripción del proyecto, etc.
+
+Cuando al final de crear el proyecto usamos el comando:
+
+npm run build
+
+Esto nos creara una carpeta llamada dist, la cual contiene los archivos que se deben subir al servidor.
+
+Con el comando:
+
+npm run preview
+
+Esto nos creara una carpeta llamada dist, la cual contiene los archivos que se deben subir al servidor.
+
+tsconfig.json
+
+Archivo que contiene la configuración de typescript.
+
+Aqui se encuentra la configuración de typescript, como por ejemplo la versión de typescript, el modo de compilación, etc.
+
+Astro Pages
