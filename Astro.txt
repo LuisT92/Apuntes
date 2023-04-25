@@ -81,3 +81,45 @@ Archivo que contiene la configuración de typescript.
 Aqui se encuentra la configuración de typescript, como por ejemplo la versión de typescript, el modo de compilación, etc.
 
 Astro Pages
+
+Sabemos que una pagina normalmente no se compone de una sola pagina, sino que se compone de varias paginas, como por ejemplo la pagina de inicio, la pagina de contacto, la pagina de nosotros, etc.
+
+Para crear una pagina en Astro, debemos crear un archivo .astro en la carpeta src/pages, el cual debe tener el mismo nombre que la ruta que queremos que tenga la pagina.
+
+Por ejemplo, si queremos que la pagina de inicio tenga la ruta http://localhost:3000/, debemos crear un archivo llamado index.astro en la carpeta src/pages.
+
+De la misma manera con npm run dev, podemos ver las paginas que hemos creado.
+
+En las paginas que creamos, las . astro nos sirven para escribir codigo HTML primeramente, pero tambien podemos escribir codigo de javascript, typescript, etc.
+
+Aunque de inicio podria incomodarnos poner el codigo CSS dentro de la pagina HTML, cuando se construye el proyecto con npm run build, se crea un archivo llamado global.css, el cual contiene todos los estilos que hemos escrito en las paginas.
+
+Ahora con javascript igual se crea de la misma manera que el CSS, para que veamos pedazos solo en el area o el servidor de desarrollo, debemos colocar el codigo dentro de un tag script, osea:
+
+---
+codigo javascript
+---
+
+Asi solo se ejecutara ese codigo en el area de desarrollo y al construir el proyecto, ese codigo no se ejecutara.
+
+Si por ejemplo se quiere usar codigo de Javascript en el area de desarrollo y en el area de produccion, debemos colocar el codigo dentro de un tag script, o en su caso colocarlo en la parte que manejaremos solo en desarrollo y consumirla en la parte que manejaremos en produccion. Esto se hace de la siguiente manera:
+
+---
+codigo javascript, coloquemos un arreglo de Strings
+const hobbies = ["Programar", "Leer", "Jugar", "Dormir"];
+---
+
+Y ahora lo consumimos de la siguiente manera:
+
+<h1>Mis Hobbies</h1>
+<ul>
+  {hobbies.map((hobbie) => (
+    <li>{hobbie}</li>
+  ))}
+</ul>
+
+De esta manera podemos usar codigo de Javascript en el area de desarrollo y en el area de produccion.
+
+ESTE TIPO DE SINTAXIS ES LA QUE SE USA EN REACT, ANGULAR, ETC. y se llama JSX.
+
+Data Fetching
