@@ -2497,3 +2497,25 @@ el valor de un item debemos hacer uso de la funcion document.cookie
 Para fijar el vencimiento de una cookie lo colocamos despues del valor de la cookie y antes del dominio, por ejemplo:
 
 document.cookie ="nombre=valor; expires" + new Date(2020, 11, 24).toUTCString();
+
+Drag and Drop en JavaScript
+
+Para poder hacer uso de Drag and Drop en JavaScript debemos hacer uso de los eventos:
+
+dragstart -> se ejecuta cuando se empieza a arrastrar un elemento
+
+drag -> se ejecuta cuando se esta arrastrando un elemento 
+
+dragend -> se ejecuta cuando se termina de arrastrar un elemento
+
+dragenter -> se ejecuta cuando un elemento entra en el area de otro elemento
+
+dragover -> se ejecuta cuando un elemento esta sobre otro elemento
+
+dragleave -> se ejecuta cuando un elemento sale del area de otro elemento
+
+drop -> se ejecuta cuando se suelta un elemento sobre otro elemento
+
+Para poder hacer uso de Drag and Drop en JavaScript debemos hacer uso de la funcion addEventListener() y dentro de los parentesis colocamos el evento que queremos escuchar y dentro de la funcion colocamos el codigo que queremos ejecutar cuando se produzca el evento.
+
+Para poder hacer uso de Drag and Drop en JavaScript debemos hacer uso de la funcion dataTransfer.setData('nombre', 'valor') y dentro de los parentesis colocamos el nombre y el valor que queremos almacenar en el elemento que estamos arrastrando.
