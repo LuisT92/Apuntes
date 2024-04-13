@@ -1,0 +1,40 @@
+Crear proyecto
+
+Para Crear un proyecto se selecciona crear springboot project, la version de java, ya sea 11 o la que se recomienda mas es la 17, seleccionamos Maven que es el manejador de dependencias, y seleccionamos la version de springboot, siempre la version mas actual y que sea estable.
+
+Las opciones en la pantalla de inizializr seran las siguientes:
+
+springboot web tools
+MySQL driver o el manejador de base de datos que se este utilizando
+spring data jpa para la persistencia de datos con Hibernate
+spring devtools para el desarrollo de la aplicacion
+
+Como se esta trabajando con un IDE como IntelliJ IDEA, solo se da click en el boton de generar proyecto, se va a abrir en un espacio de trabajo.  
+
+Ahora configuramos el properties de la siguiente forma:
+
+spring.application.name=servicio-productos
+
+Nos sirve para que el servicio se registre en el servidor de descubrimiento de servicios (Eureka).s
+
+server.port=8001
+
+Puerto en el que se va a ejecutar el servicio.
+
+Estos son lo minimos requeridos para que el proyecto funcione, pero se pueden agregar mas propiedades.
+
+Crea un modelo entity dentro de un package models, en este caso se crea un modelo de producto.
+
+Cuando creamos la clase, se le agrega la anotacion @Entity, para que se cree la tabla en la base de datos ademas de la notacion @Table(name = "{nombre de la tabla en  la BD}") para que se cree la tabla con el nombre que se le indique una cosa importante cuando trabajamos con hibernate y JPA es que debemos de implementar la interfaz Serializable para que se pueda serializar el objeto y se pueda guardar en la base de datos y se hace de la siguiente forma:
+
+public class Producto implements Serializable
+
+Tambien se debe agregar:
+
+private static final long serialVersionUID = 1L;
+
+Se crean los atributos de la clase, y se le agregan las anotaciones @Id y @GeneratedValue(strategy = GenerationType.IDENTITY) para que se cree el id de la tabla y se autoincremente en caso de ser asi.
+
+Despues se crean los atributos de la clase, y se le agregan las anotaciones @Column(name = "{nombre de la columna en la BD}") para que se cree la columna con el nombre que se le indique en caso de que sea diferente al nombre del atributo o como en el caso de las fechas se requiere algun tipo de fewcha especial como solo la fecha (TemporaryTipe.Date) o solo la hora (TemporaryTipe.Time) o fecha y hora (TemporaryTipe.Timestamp).
+
+Se crean los getters y setters de los atributos.
