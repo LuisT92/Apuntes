@@ -1,0 +1,5 @@
+Sistema GRC (Gobierno, Riesgos z cumplimiento)
+
+Un sistema GRC (Gobierno, Riesgos y Cumplimiento) es una plataforma o conjunto de herramientas que ayuda a las organizaciones a gestionar y supervisar sus actividades relacionadas con el gobierno corporativo, la gestión de riesgos y el cumplimiento normativo. Estas actividades incluyen la definición de políticas y procedimientos, la evaluación y mitigación de riesgos, el monitoreo del cumplimiento de regulaciones y leyes, y la generación de informes y auditorías. El objetivo principal de un sistema GRC es proporcionar una visión integral y centralizada de las actividades de gobierno, riesgos y cumplimiento de una organización, para mejorar la toma de decisiones y garantizar el cumplimiento de las normas y regulaciones aplicables.
+
+Se pueden configurar diferentes dashboards para revisar y configurar las politicas de seguridad de las empresas segun lo que le corresponde a cada uno 
